@@ -302,7 +302,6 @@ C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86
 C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.ShopForm.resources
 C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.vbproj.GenerateResource.cache
 C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.vbproj.CoreCompileInputs.cache
-C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.vbprojAssemblyReference.cache
 C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.AboutForm.resources
 C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.SettingsForm.resources
 C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.StatsForm.resources
@@ -359,3 +358,6 @@ C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplica
 C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body10ASLEEP.png
 C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body10AWAKE.png
 C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0.png
+C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Luke\source\repos\Cyberpet\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.vbproj.CopyComplete

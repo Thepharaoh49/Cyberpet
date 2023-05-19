@@ -27,23 +27,20 @@
 
     End Sub
     Private Sub InventoryForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim foodcounter As Integer = Settings.Food
-        For i = 1 To foodcounter
+
+        For i = 1 To Settings.Food
             Inventory.Items.Add("CyberFood")
         Next i
 
-        Dim drinkcounter As Integer = Settings.Drink
-        For i = 1 To drinkcounter
+        For i = 1 To Settings.Drink
             Inventory.Items.Add("CyberDrink")
         Next i
 
-        Dim boostcounter As Integer = Settings.Boost
-        For i = 1 To boostcounter
+        For i = 1 To Settings.Boost
             Inventory.Items.Add("CyberBoost")
         Next i
 
-        Dim bandagecounter As Integer = Settings.Bandage
-        For i = 1 To bandagecounter
+        For i = 1 To Settings.Bandage
             Inventory.Items.Add("CyberBandage")
         Next i
     End Sub

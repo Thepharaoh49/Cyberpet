@@ -13,20 +13,13 @@ Module Module1
     Public MoneySpent As Integer
     Public MoneyEarned As Integer
     Public Speaker As SpeechSynthesizer = New SpeechSynthesizer()
-    Public minutes As Integer = 0
-    Public Basetime As Date
-    Public TimeText As String = ""
-    Public Paused As Boolean
-    Public pausetime As Date
-    Public HealthVar As Integer
-    Public karmabuffer As Double = 0
     Public random As New Random()
     Public RandomNumber As Integer
 
     ''' <summary>
     ''' Checks for a level up in work
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub workcheck()
         If (Pet.workbuffer = 1) Then
             Pet.WorkLevel += 1
@@ -40,7 +33,7 @@ Module Module1
     ''' <summary>
     ''' Gives the cyberpet food
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub Feed()
         ''increases hungerbar and removes a food.
         If (Settings.Food > 0) Then
@@ -54,7 +47,7 @@ Module Module1
     ''' <summary>
     ''' gives the cyberpet drink
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub UseDrink()
         '' Increases thirstbar and removes a drink
         If (Settings.Drink > 0) Then
@@ -65,7 +58,7 @@ Module Module1
     ''' <summary>
     ''' Gives the cyberpet an energy boost
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub UseBoost()
         '' increases energybar and removes a boost
         If (Settings.Boost > 0) Then
@@ -76,7 +69,7 @@ Module Module1
     ''' <summary>
     ''' Gives the pet a bandage, healing injury
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub UseBandage()
         '' removes injury and bandage
         If (Pet.Injured) Then
@@ -92,42 +85,15 @@ Module Module1
             Say("Your CyberPet is not injured.")
         End If
     End Sub
-    ''' <summary>
-    ''' Produces a random speech-synthesised string from a selection
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub Annoy()
-        ''Chooses a phrase from a selection to say
-        Dim speechcheck As Integer
-        speechcheck = random.Next(1, 4)
-        If (speechcheck = 1) Then
-            Say("OUCH!", False)
-        ElseIf (speechcheck = 2) Then
-            Say("Stop it", False)
-        ElseIf (speechcheck = 3) Then
-            Say("You are annoying me", False)
-        ElseIf (speechcheck = 4) Then
-            Say("ow", False)
-        End If
-    End Sub
-    ''' <summary>
-    ''' Sets all cash labels to display up to date
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub updatecash()
-        '' Updates the cash labels
-        MainForm.MainCashLabel.Text = "£" & Settings.Cash
 
-        ShopForm.ShopCashLabel.Text = "£" & Settings.Cash
-        InventoryForm.InventoryCashLabel.Text = "£" & Settings.Cash
-    End Sub
+
     ''' <summary>
     ''' Changes the colour of the karmabar to suit the karma level
     ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub karmacheck()
+
+    Public Sub CheckKarma()
         ''Sets the karmabar colour to suit the karma level
-        Select Case (MainForm.KarmaBar.Value)
+        Select Case (Pet.Karma)
             Case 0
                 MainForm.KarmaBar.ForeColor = Color.Maroon
             Case 1
@@ -152,45 +118,20 @@ Module Module1
                 MainForm.KarmaBar.ForeColor = Color.Green
         End Select
         ''Sets the picture to the correct picture for the karma level
-        CheckBodyType()
-    End Sub
-
-    ''' <summary>
-    ''' Updates the colour of the pet, and whether it is awake or not
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub CheckBodyType()
-        '' Updates the picture based on the pet's body state
         Dim filePath = String.Format("{0}\Resources\Body{1}{2}.png", Application.StartupPath, MainForm.KarmaBar.Value, If(Pet.Asleep, "ASLEEP", "AWAKE"))
         MainForm.PetBodyDisplay.Image = Bitmap.FromFile(filePath)
     End Sub
+
     ''' <summary>
     ''' Starts a new game
     ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub newgame()
+    Public Sub NewGame()
         '' resets all values
-        Settings.Cash = 100
-        Pet.Age = 0
+        Pet = New Cyberpet
+        Settings = New GameSettings
         Pet.Name = "NAME"
         MainForm.PetNameLabel.Text = Pet.Name
-        starttime = Now
-        minutes = 0
-        Pet.Karma = 5
-        Pet.Health = 1000
-        Pet.Hunger = 1000
-        Pet.Thirst = 1000
-        Pet.Toilet = 0
-        Pet.Energy = 1000
-        Pet.KarmaExp = 0
-        Settings.Paused = False
-        Settings.Food = 2
-        Settings.Drink = 2
-        Settings.Boost = 0
-        Settings.Bandage = 0
-        Pet.WorkLevel = 1
-        Pet.workbuffer = 0
-        Pet.Injured = False
+        MainForm.StartTime = Now
         NameForm.Show()
         SettingsForm.SlowBtn.Checked = False
         SettingsForm.FastBtn.Checked = False
@@ -200,17 +141,8 @@ Module Module1
     End Sub
 
     ''' <summary>
-    ''' Runs subroutines as above
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub checkbars()
-        '' Runs several subroutines
-        karmacheck()
-    End Sub
-    ''' <summary>
     ''' Sets the background of the settings form
     ''' </summary>
-    ''' <remarks></remarks>
     Public Sub Backgroundcheck()
         If (settingscolour = "Blue") Then
             SettingsForm.BackColor = Color.SteelBlue
@@ -227,7 +159,7 @@ Module Module1
     ''' Allows speech synthesis
     ''' </summary>
     ''' <param name="Speech"></param>
-    ''' <remarks></remarks>
+
     Public Sub Say(Speech As String, Optional showMsg As Boolean = True)
         '   speaker.SelectVoice("Microsoft Anna")
         Speaker.SpeakAsync(Speech)

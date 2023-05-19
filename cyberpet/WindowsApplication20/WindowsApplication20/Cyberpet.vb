@@ -1,4 +1,8 @@
-﻿Public Class Cyberpet
+﻿Imports System.ComponentModel
+Imports System.Runtime.CompilerServices
+
+Public Class Cyberpet
+    Implements INotifyPropertyChanged
     Private _Hunger As Integer = 0
     Private _Thirst As Integer = 0
     Private _Toilet As Integer = 0
@@ -7,12 +11,22 @@
     Private _Experience As Integer = 0
     Private _Health As Integer = 1000
     Private _KarmaExp As Integer = 0
+    Private _Age As Integer = 0
     Public Property BodyState As String
     Public Property Level As Byte = 1
     Public Property Injured As Boolean
     Public Property Asleep As Boolean
     Public Property Name As String = ""
-    Public Property Age As Integer = 0
+    Public Property Age As Integer
+        Get
+            Return _Age
+        End Get
+        Set
+            _Age = Value
+            OnPropertyChanged()
+        End Set
+    End Property
+
     Public Property Dead As Boolean
     Public Property WorkLevel As Byte = 1
     Public Property KarmaExp As Integer
@@ -28,6 +42,7 @@
                 Karma += 1
                 _KarmaExp = 0
             End If
+            OnPropertyChanged()
         End Set
     End Property
 
@@ -37,11 +52,12 @@
             Return _Experience
         End Get
         Set
-            _Experience = Math.Max(0, Math.Min(1000, Value))
-            If (_Experience = 1000) Then
+            _Experience = Math.Max(0, Math.Min(100, Value))
+            If (_Experience = 100) Then
                 _Experience = 0
                 LevelUp()
             End If
+            OnPropertyChanged()
         End Set
     End Property
     Public Property Karma As Integer
@@ -50,6 +66,7 @@
         End Get
         Set
             _Karma = Math.Max(0, Math.Min(10, Value))
+            OnPropertyChanged()
         End Set
     End Property
     Public Property Hunger As Integer
@@ -58,6 +75,7 @@
         End Get
         Set
             _Hunger = Math.Max(0, Math.Min(1000, Value))
+            OnPropertyChanged()
         End Set
     End Property
     Public Property Thirst As Integer
@@ -66,6 +84,8 @@
         End Get
         Set
             _Thirst = Math.Max(0, Math.Min(1000, Value))
+
+            OnPropertyChanged()
         End Set
     End Property
     Public Property Toilet As Integer
@@ -77,6 +97,8 @@
             If (_Toilet = 1000) Then
                 MissedToilet()
             End If
+
+            OnPropertyChanged()
         End Set
     End Property
     Public Property Energy As Integer
@@ -85,6 +107,7 @@
         End Get
         Set
             _Energy = Math.Max(0, Math.Min(1000, Value))
+            OnPropertyChanged()
         End Set
     End Property
     Public Property Health As Integer
@@ -93,13 +116,14 @@
         End Get
         Set
             _Health = Value
+            OnPropertyChanged()
         End Set
     End Property
 
     ''' <summary>
     ''' Punishes the pet, causing injury.
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub Punish()
         '' If the pet is not injured, it becomes injured
         If (Injured = False) Then
@@ -110,7 +134,7 @@
         Else
             ''if the pet was injured, it is killed
             Say("You have killed your cyberpet.")
-            newgame()
+            NewGame()
         End If
     End Sub
 
@@ -123,20 +147,20 @@
             Injured = True
         Else
             Say("You pet needed the toilet. Your pet has died.")
-            newgame()
+            NewGame()
         End If
     End Sub
 
     Private Sub LevelUp()
-        Say("Level! Up!")
+        Say("Level Up!")
         Pet.Level += 1
     End Sub
 
     ''' <summary>
     ''' "plays" with the cyberpet, increasing karma and decreasing energy
     ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub play()
+
+    Public Sub Play()
         '' Plays with the cyberpet
         Dim karmaAdd As Double = (Module1.random.Next(1, 5)) / 10
         If (Energy >= 200) Then
@@ -165,18 +189,40 @@
     Public Sub CalculateHealth()
         '' Checks the pet for injuries
         If (Injured) Then
-            Health = (Hunger + Thirst) / 3
+            Health = ((1000 - Hunger) + (1000 - Thirst)) / 3
         Else
-            Health = (Hunger + Thirst) / 2
+            Health = ((1000 - Hunger) + (1000 - Thirst)) / 2
         End If
 
         '' Checks if the pet has died or not
         If (Pet.Health < 1) Then
-            Pet.Thirst = 1000
-            Pet.Hunger = 1000
-            Pet.Health = 1000
             Say("Your pet has died")
-            newgame()
+            NewGame()
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Produces a random speech-synthesised string from a selection
+    ''' </summary>
+
+    Public Sub Annoy()
+        ''Chooses a phrase from a selection to say
+        Dim speechcheck As Integer
+        speechcheck = random.Next(1, 5)
+        If (speechcheck = 1) Then
+            Say("OUCH!", False)
+        ElseIf (speechcheck = 2) Then
+            Say("Stop it", False)
+        ElseIf (speechcheck = 3) Then
+            Say("You are annoying me", False)
+        ElseIf (speechcheck = 4) Then
+            Say("ow", False)
+        End If
+    End Sub
+
+    Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+
+    Protected Sub OnPropertyChanged(<CallerMemberName> Optional ByVal propertyName As String = Nothing)
+        RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
     End Sub
 End Class

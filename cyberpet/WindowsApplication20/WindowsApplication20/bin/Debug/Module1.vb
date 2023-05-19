@@ -13,20 +13,13 @@ Module Module1
     Public MoneySpent As Integer
     Public MoneyEarned As Integer
     Public Speaker As SpeechSynthesizer = New SpeechSynthesizer()
-    Public minutes As Integer = 0
-    Public Basetime As Date
-    Public TimeText As String = ""
-    Public Paused As Boolean
-    Public pausetime As Date
-    Public HealthVar As Integer
-    Public karmabuffer As Double = 0
     Public random As New Random()
     Public RandomNumber As Integer
 
     ''' <summary>
     ''' Checks for a level up in work
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub workcheck()
         If (Pet.workbuffer = 1) Then
             Pet.WorkLevel += 1
@@ -40,69 +33,46 @@ Module Module1
     ''' <summary>
     ''' Gives the cyberpet food
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub Feed()
         ''increases hungerbar and removes a food.
         If (Settings.Food > 0) Then
             Settings.Food -= 1
-            If (Pet.Hunger < 801) Then
-                Pet.Hunger += 200
-            Else
-                Pet.Hunger = 1000
-            End If
-            If (Pet.Energy < 901) Then
-                Pet.Energy += 100
-            Else
-                Pet.Energy = 1000
-            End If
+            Pet.Hunger += 200
         Else
             Say("You do not have any cyber food")
-
         End If
 
     End Sub
     ''' <summary>
     ''' gives the cyberpet drink
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub UseDrink()
         '' Increases thirstbar and removes a drink
         If (Settings.Drink > 0) Then
             Settings.Drink -= 1
-            If (Pet.Thirst < 801) Then
-                Pet.Thirst += 200
-            Else
-                Pet.Thirst = 1000
-            End If
-            If (Pet.Toilet < 801) Then
-                Pet.Toilet += 200
-            Else
-                Pet.Toilet = 1000
-            End If
+            Pet.Thirst += 200
         End If
     End Sub
     ''' <summary>
     ''' Gives the cyberpet an energy boost
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub UseBoost()
         '' increases energybar and removes a boost
         If (Settings.Boost > 0) Then
             Settings.Boost -= 1
-            If (Pet.Energy < 801) Then
-                Pet.Energy += 200
-            Else
-                Pet.Energy = 1000
-            End If
+            Pet.Energy += 200
         End If
     End Sub
     ''' <summary>
     ''' Gives the pet a bandage, healing injury
     ''' </summary>
-    ''' <remarks></remarks>
+
     Public Sub UseBandage()
         '' removes injury and bandage
-        If (Pet.Injured = True) Then
+        If (Pet.Injured) Then
             If (Settings.Bandage > 0) Then
                 Settings.Bandage -= 1
                 Pet.Injured = False
@@ -115,90 +85,15 @@ Module Module1
             Say("Your CyberPet is not injured.")
         End If
     End Sub
-    ''' <summary>
-    ''' Produces a random speech-synthesised string from a selection
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub Annoy()
-        ''Chooses a phrase from a selection to say
-        Dim speechcheck As Integer
-        speechcheck = random.Next(1, 4)
-        If (speechcheck = 1) Then
-            Say("OUCH!", False)
-        ElseIf (speechcheck = 2) Then
-            Say("Stop it", False)
-        ElseIf (speechcheck = 3) Then
-            Say("You are annoying me", False)
-        ElseIf (speechcheck = 4) Then
-            Say("ow", False)
-        End If
-    End Sub
 
-    ''' <summary>
-    ''' Checks the need for toilet
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub ToiletCheck()
-        ''Checks for actions needed based on toiletbar value
-        If (Pet.Toilet > 999) Then
-            Pet.Toilet = 1
-            If (Pet.Injured = False) Then
-                Say("Your pet's bladder exploded. Your pet has become injured.")
-                Pet.Injured = True
-            Else
-                Say("You pet needed the toilet. Your pet has died.")
-                newgame()
-            End If
-        End If
-    End Sub
-    ''' <summary>
-    ''' Checks whether the pet is asleep and regaining energy
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub SleepCheck()
-        '' Increases energy when asleep
-        If (Pet.Asleep = True) Then
-            If (Pet.Energy < 1000) Then
-                Pet.Energy += 1
-            Else
-                Pet.Energy = 1000
-            End If
-        End If
-    End Sub
-    ''' <summary>
-    ''' Adds one to the karma if the buffer is at 1
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub Karmaupdate()
-        '' updates the karma when needed
-        If (karmabuffer < -0.9) Then
-            MainForm.KarmaBar.Value += 1
-            karmabuffer = 0
-        End If
 
-        If (karmabuffer > 0.9) Then
-            MainForm.KarmaBar.Value += 1
-            karmabuffer = 0
-        End If
-    End Sub
-    ''' <summary>
-    ''' Sets all cash labels to display up to date
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub updatecash()
-        '' Updates the cash labels
-        MainForm.MainCashLabel.Text = "£" & Settings.Cash
-
-        ShopForm.ShopCashLabel.Text = "£" & Settings.Cash
-        InventoryForm.InventoryCashLabel.Text = "£" & Settings.Cash
-    End Sub
     ''' <summary>
     ''' Changes the colour of the karmabar to suit the karma level
     ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub karmacheck()
+
+    Public Sub CheckKarma()
         ''Sets the karmabar colour to suit the karma level
-        Select Case (MainForm.KarmaBar.Value)
+        Select Case (Pet.Karma)
             Case 0
                 MainForm.KarmaBar.ForeColor = Color.Maroon
             Case 1
@@ -222,74 +117,21 @@ Module Module1
             Case 10
                 MainForm.KarmaBar.ForeColor = Color.Green
         End Select
-
         ''Sets the picture to the correct picture for the karma level
-        CheckBodyType()
-    End Sub
-    ''' <summary>
-    ''' Sets health value based on injury
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub injurycheck()
-        '' Checks the pet for injuries
-        If (Pet.Injured = False) Then
-            HealthVar = MainForm.HealthBar.Value
-            MainForm.HealthBar.Value = ((Pet.Hunger + Pet.Thirst) / 2)
-        Else
-            MainForm.HealthBar.Value = ((Pet.Hunger + Pet.Thirst) / 3)
-        End If
-    End Sub
-    ''' <summary>
-    ''' Checks whether the health has hit 0 or not
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub HealthCheck()
-        '' Checks if the pet has died or not
-        If (MainForm.HealthBar.Value < 1) Then
-            Pet.Thirst = 1000
-            Pet.Hunger = 1000
-            MainForm.HealthBar.Value = 1000
-            Say("Your pet has died")
-            newgame()
-
-        End If
-    End Sub
-    ''' <summary>
-    ''' Updates the colour of the pet, and whether it is awake or not
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub CheckBodyType()
-        '' Updates the picture based on the pet's body state
         Dim filePath = String.Format("{0}\Resources\Body{1}{2}.png", Application.StartupPath, MainForm.KarmaBar.Value, If(Pet.Asleep, "ASLEEP", "AWAKE"))
         MainForm.PetBodyDisplay.Image = Bitmap.FromFile(filePath)
     End Sub
+
     ''' <summary>
     ''' Starts a new game
     ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub newgame()
+    Public Sub NewGame()
         '' resets all values
-        Settings.Cash = 100
-        Pet.Age = 0
+        Pet = New Cyberpet
+        Settings = New GameSettings
         Pet.Name = "NAME"
         MainForm.PetNameLabel.Text = Pet.Name
-        starttime = Now
-        minutes = 0
-        MainForm.KarmaBar.Value = 5
-        MainForm.HealthBar.Value = 1000
-        Pet.Hunger = 1000
-        Pet.Thirst = 1000
-        Pet.Toilet = 0
-        Pet.Energy = 1000
-        karmabuffer = 0
-        Paused = False
-        Settings.Food = 2
-        Settings.Drink = 2
-        Settings.Boost = 0
-        Settings.Bandage = 0
-        Pet.WorkLevel = 1
-        Pet.workbuffer = 0
-        Pet.Injured = False
+        MainForm.StartTime = Now
         NameForm.Show()
         SettingsForm.SlowBtn.Checked = False
         SettingsForm.FastBtn.Checked = False
@@ -297,38 +139,10 @@ Module Module1
         MainForm.Timer1.Interval = 100
         SettingsForm.NormalBtn.Checked = True
     End Sub
-    ''' <summary>
-    ''' Pauses the game
-    ''' </summary>
-    ''' <remarks></remarks>
-    Sub pausegame()
-        '' Pauses the game
-        If Settings.Paused Then
-            MainForm.Timer1.Start()
-            Settings.Paused = False
-            MainForm.Button3.Text = "PAUSE"
-        Else
-            Settings.Paused = True
-            MainForm.Timer1.Stop()
-            MainForm.Button3.Text = "RESUME"
-        End If
 
-    End Sub
-    ''' <summary>
-    ''' Runs subroutines as above
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub checkbars()
-        '' Runs several subroutines
-        ToiletCheck()
-        SleepCheck()
-        karmacheck()
-        HealthCheck()
-    End Sub
     ''' <summary>
     ''' Sets the background of the settings form
     ''' </summary>
-    ''' <remarks></remarks>
     Public Sub Backgroundcheck()
         If (settingscolour = "Blue") Then
             SettingsForm.BackColor = Color.SteelBlue
@@ -340,28 +154,12 @@ Module Module1
             SettingsForm.BackColor = Color.LightPink
         End If
     End Sub
-    ''' <summary>
-    ''' "plays" with the cyberpet, increasing karma and decreasing energy
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub play()
-        '' Plays with the cyberpet
-        Dim karmaAdd As Double = (Module1.random.Next(1, 5)) / 10
-        If (Pet.Energy > 199) Then
-            Say("You play with your cyberpet")
-            Say("You recieved " & karmaAdd & " karma")
-            Say("Your pet used up twenty percent energy")
-            karmabuffer += karmaAdd
-            Pet.Energy -= 200
-        Else
-            Say("You do not have enough energy")
-        End If
-    End Sub
+
     ''' <summary>
     ''' Allows speech synthesis
     ''' </summary>
     ''' <param name="Speech"></param>
-    ''' <remarks></remarks>
+
     Public Sub Say(Speech As String, Optional showMsg As Boolean = True)
         '   speaker.SelectVoice("Microsoft Anna")
         Speaker.SpeakAsync(Speech)

@@ -48,6 +48,7 @@ Partial Class MainForm
         Me.TimeLabel = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.AgeLabel = New System.Windows.Forms.Label()
+        Me.CyberpetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.KarmaBar = New System.Windows.Forms.ProgressBar()
         Me.HungerBar = New System.Windows.Forms.ProgressBar()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -57,7 +58,6 @@ Partial Class MainForm
         Me.ThirstLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.MainCashLabel = New System.Windows.Forms.Label()
         Me.PetBodyDisplay = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FOODToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -81,11 +81,12 @@ Partial Class MainForm
         Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmergencyCashButton = New System.Windows.Forms.Button()
         Me.ExperienceBar = New System.Windows.Forms.ProgressBar()
         Me.ToiletBar = New VerticalProgressBar()
         Me.EnergyBar = New VerticalProgressBar()
         Me.HealthBar = New VerticalProgressBar()
+        Me.MainCashLabel = New System.Windows.Forms.Label()
+        CType(Me.CyberpetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PetBodyDisplay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.MenuStrip2.SuspendLayout()
@@ -248,6 +249,10 @@ Partial Class MainForm
         Me.AgeLabel.TabIndex = 4
         Me.AgeLabel.Text = "Age: 0"
         '
+        'CyberpetBindingSource
+        '
+        Me.CyberpetBindingSource.DataSource = GetType(Cyberpet)
+        '
         'KarmaBar
         '
         Me.KarmaBar.BackColor = System.Drawing.Color.Black
@@ -351,20 +356,10 @@ Partial Class MainForm
         Me.Label2.TabIndex = 20
         Me.Label2.Text = "T" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "O" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "I" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "L" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "E" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "T"
         '
-        'MainCashLabel
-        '
-        Me.MainCashLabel.AutoSize = True
-        Me.MainCashLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainCashLabel.Location = New System.Drawing.Point(18, 294)
-        Me.MainCashLabel.Name = "MainCashLabel"
-        Me.MainCashLabel.Size = New System.Drawing.Size(82, 16)
-        Me.MainCashLabel.TabIndex = 21
-        Me.MainCashLabel.Text = "CashLabel"
-        '
         'PetBodyDisplay
         '
         Me.PetBodyDisplay.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PetBodyDisplay.Image = Global.CyberPet.My.Resources.Resources.Body4AWAKE
+        Me.PetBodyDisplay.Image = Global.CyberPet.My.Resources.Resources.Body5AWAKE
         Me.PetBodyDisplay.Location = New System.Drawing.Point(185, 72)
         Me.PetBodyDisplay.Name = "PetBodyDisplay"
         Me.PetBodyDisplay.Size = New System.Drawing.Size(271, 226)
@@ -531,17 +526,6 @@ Partial Class MainForm
         Me.ToolStripMenuItem13.Size = New System.Drawing.Size(52, 21)
         Me.ToolStripMenuItem13.Text = "HELP"
         '
-        'EmergencyCashButton
-        '
-        Me.EmergencyCashButton.BackColor = System.Drawing.Color.LawnGreen
-        Me.EmergencyCashButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.EmergencyCashButton.Location = New System.Drawing.Point(12, 269)
-        Me.EmergencyCashButton.Name = "EmergencyCashButton"
-        Me.EmergencyCashButton.Size = New System.Drawing.Size(96, 22)
-        Me.EmergencyCashButton.TabIndex = 24
-        Me.EmergencyCashButton.Text = "EMERGENCY"
-        Me.EmergencyCashButton.UseVisualStyleBackColor = False
-        '
         'ExperienceBar
         '
         Me.ExperienceBar.BackColor = System.Drawing.Color.DarkGray
@@ -592,6 +576,16 @@ Partial Class MainForm
         Me.HealthBar.TabIndex = 10
         Me.HealthBar.Value = 1000
         '
+        'MainCashLabel
+        '
+        Me.MainCashLabel.AutoSize = True
+        Me.MainCashLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainCashLabel.Location = New System.Drawing.Point(18, 294)
+        Me.MainCashLabel.Name = "MainCashLabel"
+        Me.MainCashLabel.Size = New System.Drawing.Size(82, 16)
+        Me.MainCashLabel.TabIndex = 21
+        Me.MainCashLabel.Text = "CashLabel"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -599,7 +593,6 @@ Partial Class MainForm
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(639, 401)
         Me.Controls.Add(Me.ExperienceBar)
-        Me.Controls.Add(Me.EmergencyCashButton)
         Me.Controls.Add(Me.MenuStrip2)
         Me.Controls.Add(Me.MainCashLabel)
         Me.Controls.Add(Me.Label2)
@@ -627,6 +620,7 @@ Partial Class MainForm
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "CyberPet"
+        CType(Me.CyberpetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PetBodyDisplay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -669,7 +663,6 @@ Partial Class MainForm
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ToiletBar As VerticalProgressBar
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents MainCashLabel As System.Windows.Forms.Label
     Friend WithEvents WeakToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MediumToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StrongToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -696,7 +689,7 @@ Partial Class MainForm
     Friend WithEvents STRONGToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SETTINGSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem13 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EmergencyCashButton As System.Windows.Forms.Button
     Friend WithEvents ExperienceBar As System.Windows.Forms.ProgressBar
-
+    Friend WithEvents MainCashLabel As Label
+    Friend WithEvents CyberpetBindingSource As BindingSource
 End Class

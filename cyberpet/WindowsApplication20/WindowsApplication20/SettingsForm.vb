@@ -41,82 +41,43 @@
     End Sub
     Public Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
         ''sets the background colour
+        Dim backColour As Color
+        Dim foreColour As Color
         If (ComboBox1.SelectedItem = "Blue") Then
-            AboutForm.BackColor = Color.SteelBlue
-            InventoryForm.BackColor = Color.SteelBlue
-            MainForm.BackColor = Color.SteelBlue
-            NameForm.BackColor = Color.SteelBlue
+            backColour = Color.SteelBlue
+            foreColour = Color.LawnGreen
             settingscolour = "Blue"
-            ShopForm.BackColor = Color.SteelBlue
-            StatsForm.BackColor = Color.SteelBlue
-
-            MainForm.MenuStrip1.BackColor = Color.LawnGreen
-            MainForm.MenuStrip2.BackColor = Color.LawnGreen
-            MainForm.EmergencyCashButton.BackColor = Color.LawnGreen
-            MainForm.Button3.BackColor = Color.LawnGreen
-            ShopForm.BuyItem.BackColor = Color.LawnGreen
-            NameForm.NamePetOk.BackColor = Color.LawnGreen
-            NameForm.NamePetBox.BackColor = Color.LawnGreen
-            NameForm.RenameCancel.BackColor = Color.LawnGreen
-            InventoryForm.UseItem.BackColor = Color.LawnGreen
-
         ElseIf (ComboBox1.SelectedItem = "Red") Then
-            AboutForm.BackColor = Color.IndianRed
-            InventoryForm.BackColor = Color.IndianRed
-            MainForm.BackColor = Color.IndianRed
-            NameForm.BackColor = Color.IndianRed
+            backColour = Color.IndianRed
+            foreColour = Color.SteelBlue
             settingscolour = "Red"
-            ShopForm.BackColor = Color.IndianRed
-            StatsForm.BackColor = Color.IndianRed
-
-            MainForm.MenuStrip1.BackColor = Color.SteelBlue
-            MainForm.MenuStrip2.BackColor = Color.SteelBlue
-            MainForm.EmergencyCashButton.BackColor = Color.SteelBlue
-            MainForm.Button3.BackColor = Color.SteelBlue
-            ShopForm.BuyItem.BackColor = Color.SteelBlue
-            NameForm.NamePetOk.BackColor = Color.SteelBlue
-            NameForm.NamePetBox.BackColor = Color.SteelBlue
-            NameForm.RenameCancel.BackColor = Color.SteelBlue
-            InventoryForm.UseItem.BackColor = Color.SteelBlue
-
         ElseIf (ComboBox1.SelectedItem = "Green") Then
-            AboutForm.BackColor = Color.Green
-            InventoryForm.BackColor = Color.Green
-            MainForm.BackColor = Color.Green
-            NameForm.BackColor = Color.Green
+            backColour = Color.Green
+            foreColour = Color.IndianRed
             settingscolour = "Green"
-            ShopForm.BackColor = Color.Green
-            StatsForm.BackColor = Color.Green
-
-            MainForm.MenuStrip1.BackColor = Color.IndianRed
-            MainForm.MenuStrip2.BackColor = Color.IndianRed
-            MainForm.EmergencyCashButton.BackColor = Color.IndianRed
-            MainForm.Button3.BackColor = Color.IndianRed
-            ShopForm.BuyItem.BackColor = Color.IndianRed
-            NameForm.NamePetOk.BackColor = Color.IndianRed
-            NameForm.NamePetBox.BackColor = Color.IndianRed
-            NameForm.RenameCancel.BackColor = Color.IndianRed
-            InventoryForm.UseItem.BackColor = Color.IndianRed
-
         ElseIf (ComboBox1.SelectedItem = "Pink") Then
-            AboutForm.BackColor = Color.LightPink
-            InventoryForm.BackColor = Color.LightPink
-            MainForm.BackColor = Color.LightPink
-            NameForm.BackColor = Color.LightPink
+            backColour = Color.LightPink
+            foreColour = Color.LightYellow
             settingscolour = "Pink"
-            ShopForm.BackColor = Color.LightPink
-            StatsForm.BackColor = Color.LightPink
-
-            MainForm.MenuStrip1.BackColor = Color.LightYellow
-            MainForm.MenuStrip2.BackColor = Color.LightYellow
-            MainForm.EmergencyCashButton.BackColor = Color.LightYellow
-            MainForm.Button3.BackColor = Color.LightYellow
-            ShopForm.BuyItem.BackColor = Color.LightYellow
-            NameForm.NamePetOk.BackColor = Color.LightYellow
-            NameForm.NamePetBox.BackColor = Color.LightYellow
-            NameForm.RenameCancel.BackColor = Color.LightYellow
-            InventoryForm.UseItem.BackColor = Color.LightYellow
         End If
+
+
+        AboutForm.BackColor = backColour
+        InventoryForm.BackColor = backColour
+        MainForm.BackColor = backColour
+        NameForm.BackColor = backColour
+        ShopForm.BackColor = backColour
+        StatsForm.BackColor = backColour
+
+        MainForm.MenuStrip1.BackColor = foreColour
+        MainForm.MenuStrip2.BackColor = foreColour
+        MainForm.Button3.BackColor = foreColour
+        ShopForm.BuyItem.BackColor = foreColour
+        NameForm.NamePetOk.BackColor = foreColour
+        NameForm.NamePetBox.BackColor = foreColour
+        NameForm.RenameCancel.BackColor = foreColour
+        InventoryForm.UseItem.BackColor = foreColour
+
         Backgroundcheck()
     End Sub
     Private Sub TimeYes_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimeYes.CheckedChanged

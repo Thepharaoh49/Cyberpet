@@ -206,128 +206,77 @@ WindowsApplication20
  <summary>
  Punishes the pet, causing injury.
  </summary>
- <remarks></remarks>
+</member>
+<member name="M:CyberPet.Cyberpet.MissedToilet">
+ <summary>
+ Handles max toilet value overflow
+ </summary>
+</member>
+<member name="M:CyberPet.Cyberpet.Play">
+ <summary>
+ "plays" with the cyberpet, increasing karma and decreasing energy
+ </summary>
+</member>
+<member name="M:CyberPet.Cyberpet.CalculateHealth">
+ <summary>
+ Sets health value based on injury
+ </summary>
+</member>
+<member name="M:CyberPet.Cyberpet.Annoy">
+ <summary>
+ Produces a random speech-synthesised string from a selection
+ </summary>
+</member>
+<member name="M:CyberPet.GameSettings.Pause">
+ <summary>
+ Pauses the game
+ </summary>
 </member>
 <member name="M:CyberPet.Module1.workcheck">
  <summary>
  Checks for a level up in work
  </summary>
- <remarks></remarks>
 </member>
 <member name="M:CyberPet.Module1.Feed">
  <summary>
  Gives the cyberpet food
  </summary>
- <remarks></remarks>
 </member>
 <member name="M:CyberPet.Module1.UseDrink">
  <summary>
  gives the cyberpet drink
  </summary>
- <remarks></remarks>
 </member>
 <member name="M:CyberPet.Module1.UseBoost">
  <summary>
  Gives the cyberpet an energy boost
  </summary>
- <remarks></remarks>
 </member>
 <member name="M:CyberPet.Module1.UseBandage">
  <summary>
  Gives the pet a bandage, healing injury
  </summary>
- <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.Annoy">
- <summary>
- Produces a random speech-synthesised string from a selection
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.ToiletCheck">
- <summary>
- Checks the need for toilet
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.SleepCheck">
- <summary>
- Checks whether the pet is asleep and regaining energy
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.Karmaupdate">
- <summary>
- Adds one to the karma if the buffer is at 1
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.updatecash">
- <summary>
- Sets all cash labels to display up to date
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.karmacheck">
+<member name="M:CyberPet.Module1.CheckKarma">
  <summary>
  Changes the colour of the karmabar to suit the karma level
  </summary>
- <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.injurycheck">
- <summary>
- Sets health value based on injury
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.HealthCheck">
- <summary>
- Checks whether the health has hit 0 or not
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.CheckBodyType">
- <summary>
- Updates the colour of the pet, and whether it is awake or not
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.newgame">
+<member name="M:CyberPet.Module1.NewGame">
  <summary>
  Starts a new game
  </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.pausegame">
- <summary>
- Pauses the game
- </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.checkbars">
- <summary>
- Runs subroutines as above
- </summary>
- <remarks></remarks>
 </member>
 <member name="M:CyberPet.Module1.Backgroundcheck">
  <summary>
  Sets the background of the settings form
  </summary>
- <remarks></remarks>
-</member>
-<member name="M:CyberPet.Module1.play">
- <summary>
- "plays" with the cyberpet, increasing karma and decreasing energy
- </summary>
- <remarks></remarks>
 </member>
 <member name="M:CyberPet.Module1.Say(System.String,System.Boolean)">
  <summary>
  Allows speech synthesis
  </summary>
  <param name="Speech"></param>
- <remarks></remarks>
 </member>
 </members>
 </doc>

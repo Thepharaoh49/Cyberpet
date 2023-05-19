@@ -1,41 +1,55 @@
 ﻿Imports System.IO
+Imports Newtonsoft.Json
 
 Public Class MainForm
+    Public StartTime As DateTime
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         '' Start of game; Timer starts, new game is initiated.
         Timer1.Enabled = True
-        newgame()
+        NewGame()
+        SetupDataBindings()
+    End Sub
+    Private Sub SetupDataBindings()
+        EnergyBar.DataBindings.Add(New Binding("Value", Pet, "Energy"))
+        ThirstBar.DataBindings.Add(New Binding("Value", Pet, "Thirst"))
+        HungerBar.DataBindings.Add(New Binding("Value", Pet, "Hunger"))
+        HealthBar.DataBindings.Add(New Binding("Value", Pet, "Health"))
+        ToiletBar.DataBindings.Add(New Binding("Value", Pet, "Toilet"))
+        ExperienceBar.DataBindings.Add(New Binding("Value", Pet, "Experience"))
+        KarmaBar.DataBindings.Add(New Binding("Value", Pet, "Karma"))
+        PetNameLabel.DataBindings.Add(New Binding("Text", Pet, "Name"))
+        AgeLabel.DataBindings.Add(New Binding("Text", Pet, "Age") With {
+            .FormatString = "Age: 0",
+            .FormattingEnabled = True
+        })
+        Pet.Age = 0
+    End Sub
+    Public Sub UpdateUI()
+        '' Changes time label to display time
+        Dim timeElapsed = (DateDiff("s", StartTime, Now))
+        Dim minutes As Integer = Math.Truncate(timeElapsed / 60)
+        Dim seconds As Integer = timeElapsed Mod 60
+        TimeLabel.Text = Convert.ToString(minutes) & " : " & seconds
+        Pet.Age = minutes
+        '' Updates the cash labels
+        MainCashLabel.Text = $"£{Settings.Cash}"
+        ShopForm.ShopCashLabel.Text = $"£{Settings.Cash}"
+        InventoryForm.InventoryCashLabel.Text = $"£{Settings.Cash}"
+        CheckKarma()
     End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        '' Changes cash labels to suit any new changes in cash
-        updatecash()
-        '' update of progressbars and verticalprogressbars
 
         Pet.OnTick()
+        UpdateUI()
 
-        '' Checks if actions are needed based on progressbar values
-        checkbars()
-
-        '' Changes time label to display time
-        TimeText = (DateDiff("s", starttime, stoptime))
-        TimeLabel.Text = Convert.ToString(minutes) & " : " & TimeText
-        If (TimeText > 59) Then
-            '' when 60 seconds have passed, seconds timer is reset, minutes timer is increased
-            Pet.Age += 1
-            minutes += 1
-            TimeLabel.Text = Convert.ToString(minutes) & " : " & TimeText
-            starttime = Now
-        End If
-        '' Updates age
-        AgeLabel.Text = "Age: " & Pet.Age
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         '' Pauses the game when PAUSE is clicked
-        Pause()
+        Settings.Pause()
     End Sub
     Private Sub PetBodyDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PetBodyDisplay.Click
         '' Plays a sound when the pet is clicked, randomly selected from a set of phrases
-        Annoy()
+        Pet.Annoy()
     End Sub
     Private Sub FOODToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FOODToolStripMenuItem1.Click
         '' feeds the pet
@@ -51,7 +65,7 @@ Public Class MainForm
     End Sub
     Private Sub PLAYToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PLAYToolStripMenuItem1.Click
         '' plays with the pet
-        Pet.play()
+        Pet.Play()
     End Sub
     Private Sub FightEnemy(enemyLevel As String)
         Dim SuccessChance As Integer
@@ -122,122 +136,42 @@ Public Class MainForm
         FightEnemy("Strong")
     End Sub
     Private Sub SAVEToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SAVEToolStripMenuItem1.Click
-        ''Saves the game
-        '' creates a save dialogue box
-        '' sets the basic settings for save dialogue
         Dim SaveFileDialog1 As New SaveFileDialog With {
-            .Title = "Save Game",
-            .Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
-            .FilterIndex = 2,
-            .RestoreDirectory = True,
-            .FileName = "Save.txt"
+        .Title = "Save Game",
+        .Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+        .FilterIndex = 1,
+        .RestoreDirectory = True,
+        .FileName = "Save.json"
+    }
+
+        If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
+            Dim gameState As New Dictionary(Of String, Object) From {
+            {"Pet", Pet},
+            {"Settings", Settings}
         }
-        SaveFileDialog1.ShowDialog()
-        Dim savedirectory = SaveFileDialog1.FileName
 
-        '' opens the save file for editing
-        FileOpen(1, savedirectory, OpenMode.Output)
-
-        Using save As StreamWriter = New StreamWriter("SaveFile")
-            '' Saves the given variables to the text file
-            save.WriteLine(Pet.Name)
-            save.WriteLine(Pet.Age)
-            save.WriteLine(Pet.Karma)
-            save.WriteLine(Pet.Health)
-            save.WriteLine(Pet.Hunger)
-            save.WriteLine(Pet.Thirst)
-            save.WriteLine(Pet.Energy)
-            save.WriteLine(Pet.Toilet)
-            save.WriteLine(Settings.Cash)
-            save.WriteLine(Pet.Injured)
-            save.WriteLine(Settings.Food)
-            save.WriteLine(Settings.Drink)
-            save.WriteLine(Settings.Boost)
-            save.WriteLine(Settings.Bandage)
-            save.WriteLine(Pet.KarmaExp)
-            save.WriteLine(Pet.WorkLevel)
-            save.WriteLine(Pet.workbuffer)
-            save.WriteLine(Pet.Level)
-            save.WriteLine(Pet.Experience)
-            save.WriteLine(emergencycounter)
-            save.WriteLine(MoneyEarned)
-            save.WriteLine(MoneyLost)
-            save.WriteLine(MoneySpent)
-
-            If (InventoryForm.Inventory.HasChildren) Then
-                save.WriteLine(InventoryForm.Inventory.Items)
-            Else
-                save.WriteLine(0)
-            End If
-
-            save.Close()
-        End Using
-
-        '' closes the edited file
-        FileClose()
+            File.WriteAllText(SaveFileDialog1.FileName, JsonConvert.SerializeObject(gameState))
+        End If
     End Sub
     Private Sub LOADToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LOADToolStripMenuItem1.Click
-        ''Loads a previous game
-        ''creates a load dialogue box
-        '' sets the dialogue box basic details
-        Dim LoadFileDialog1 As New OpenFileDialog With {
-            .Title = "Load Game",
-            .Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
-            .FilterIndex = 1,
-            .RestoreDirectory = True,
-            .FileName = "Save.txt"
-        }
-        LoadFileDialog1.ShowDialog()
-        Dim loaddirectory = LoadFileDialog1.FileName
+        Dim OpenFileDialog1 As New OpenFileDialog With {
+        .Title = "Load Game",
+        .Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+        .FilterIndex = 1,
+        .RestoreDirectory = True
+    }
 
-        '' opens the file to load from
-        FileOpen(1, LoadFileDialog1.FileName, OpenMode.Input)
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            Dim gameState As Dictionary(Of String, Object) = JsonConvert.DeserializeObject(Of Dictionary(Of String, Object))(File.ReadAllText(OpenFileDialog1.FileName))
 
-        Using load As StreamReader = New StreamReader(1)
-
-            '' Gets information from the save file and changes the variables accordingly
-            Pet.Name = load.ReadLine()
-            Pet.Age = load.ReadLine()
-            KarmaBar.Value = load.ReadLine()
-            HealthBar.Value = load.ReadLine()
-            Pet.Hunger = load.ReadLine()
-            Pet.Thirst = load.ReadLine()
-            EnergyBar.Value = load.ReadLine()
-            Pet.Toilet = load.ReadLine()
-            Settings.Cash = load.ReadLine()
-            Pet.Injured = load.ReadLine()
-            Settings.Food = load.ReadLine()
-            Settings.Drink = load.ReadLine()
-            Settings.Boost = load.ReadLine()
-            Settings.Bandage = load.ReadLine()
-            karmabuffer = load.ReadLine()
-            Pet.WorkLevel = load.ReadLine()
-            Pet.workbuffer = load.ReadLine()
-            Pet.Level = load.ReadLine()
-            ExperienceBar.Value = load.ReadLine()
-            emergencycounter = load.ReadLine()
-            MoneyEarned = load.ReadLine()
-            MoneyLost = load.ReadLine()
-            MoneySpent = load.ReadLine()
-
-            If (load.Read = 0) Then
-
-            Else
-                InventoryForm.Inventory.Items.Add(load.ReadLine())
-            End If
-
-            stoptime = Now
-            load.Close()
-        End Using
-        ''Closes the file
-        FileClose()
-        '' Updates Name Label
-        PetNameLabel.Text = Pet.Name
+            Pet = JsonConvert.DeserializeObject(Of Cyberpet)(gameState("Pet").ToString())
+            Settings = JsonConvert.DeserializeObject(Of GameSettings)(gameState("Settings").ToString())
+        End If
     End Sub
     Private Sub KILLToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KILLToolStripMenuItem1.Click
         '' Kills the pet to start a new game
         Say("Your pet has died.")
-        newgame()
+        NewGame()
     End Sub
     Private Sub ToolStripMenuItem6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem6.Click
         '' shows the inventory form
@@ -287,23 +221,10 @@ Public Class MainForm
         '' Shows renaming form
         NameForm.Show()
     End Sub
-    Private Sub EmergencyCashButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EmergencyCashButton.Click
-        ''Gives the player an emergency cash reserve
-        If emergencycounter < 3 Then
-            Settings.Cash = 25
-            emergencycounter += 1
-        ElseIf emergencycounter = 8 Then
-            Pet.Karma = 0
-            Pet.KarmaExp = 0
-        Else
-            Say("You have exceeded the amount of emergency cash withdrawals.")
-            emergencycounter += 1
-        End If
-    End Sub
 
     Private Sub ToolStripMenuItem13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem13.Click
         '' Brings up the About form
-        Pause()
+        Settings.Pause()
         AboutForm.Show()
     End Sub
     Private Sub PUNISHToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PUNISHToolStripMenuItem.Click

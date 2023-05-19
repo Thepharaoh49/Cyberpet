@@ -1,15 +1,15 @@
 ﻿Public Class GameSettings
-    Public Property Cash As Integer
-    Public Property Food As Byte
-    Public Property Drink As Byte
-    Public Property Boost As Byte
-    Public Property Bandage As Byte
+    Public Property Cash As Integer = 100
+    Public Property Food As Byte = 2
+    Public Property Drink As Byte = 2
+    Public Property Boost As Byte = 0
+    Public Property Bandage As Byte = 0
     Public Property Paused As Boolean
 
     ''' <summary>
     ''' Pauses the game
     ''' </summary>
-    ''' <remarks></remarks>
+
     Sub Pause()
         '' Pauses the game
         If Paused Then
