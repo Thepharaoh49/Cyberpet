@@ -14,7 +14,7 @@ Module Module1
     Public MoneyEarned As Integer
     Public WorkLevel As Byte = 1
     Public workbuffer As Double = 0
-    Public speaker As SpeechSynthesizer
+    Public speaker As SpeechSynthesizer = New SpeechSynthesizer()
     Public sleepboolean As Boolean
     Public injured As Boolean
     Public PetName As String = ""
@@ -38,7 +38,6 @@ Module Module1
     Public Bandage As Byte
     Public randomclass As New Random()
     Public RandomNumber As Integer
-
     ''' <summary>
     ''' Punishes the pet, causing injury.
     ''' </summary>
@@ -50,11 +49,9 @@ Module Module1
             ''The karma decreases.
             MainForm.KarmaBar.Value = MainForm.KarmaBar.Value - 1
             Say("You have injured your cyberpet. Karma - 1")
-            MsgBox("You have injured your cyberpet. Karma - 1")
         Else
             ''if the pet was injured, it is killed
             Say("You have killed your cyberpet.")
-            MsgBox("You have killed your cyberpet.")
             newgame()
         End If
     End Sub
@@ -64,13 +61,11 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub workcheck()
         If (workbuffer = 1) Then
-            WorkLevel = WorkLevel + 1
+            WorkLevel += 1
             Say("Work Level up! Work level is now: " & WorkLevel)
-            MsgBox("Work Level up! Work level is now: " & WorkLevel)
             workbuffer = 0
             If (WorkLevel = 100) Then
                 Say("You have reached the maximum work level")
-                MsgBox("You have reached the maximum work level")
             End If
         End If
     End Sub
@@ -83,18 +78,17 @@ Module Module1
         If (Food > 0) Then
             Food = Food - 1
             If (MainForm.HungerBar.Value < 801) Then
-                MainForm.HungerBar.Value = MainForm.HungerBar.Value + 200
+                MainForm.HungerBar.Value += 200
             Else
                 MainForm.HungerBar.Value = 1000
             End If
             If (MainForm.EnergyBar.Value < 901) Then
-                MainForm.EnergyBar.Value = MainForm.EnergyBar.Value + 100
+                MainForm.EnergyBar.Value += 100
             Else
                 MainForm.EnergyBar.Value = 1000
             End If
         Else
             Say("You do not have any cyber food")
-            MsgBox("You do not have any CyberFood")
 
         End If
 
@@ -108,12 +102,12 @@ Module Module1
             If (Drink > 0) Then
             Drink = Drink - 1
             If (MainForm.ThirstBar.Value < 801) Then
-                MainForm.ThirstBar.Value = MainForm.ThirstBar.Value + 200
+                MainForm.ThirstBar.Value += 200
             Else
                 MainForm.ThirstBar.Value = 1000
             End If
             If (MainForm.ToiletBar.Value < 801) Then
-                MainForm.ToiletBar.Value = MainForm.ToiletBar.Value + 200
+                MainForm.ToiletBar.Value += 200
             Else
                 MainForm.ToiletBar.Value = 1000
             End If
@@ -128,7 +122,7 @@ Module Module1
         If (Boost > 0) Then
             Boost = Boost - 1
             If (MainForm.EnergyBar.Value < 801) Then
-                MainForm.EnergyBar.Value = MainForm.EnergyBar.Value + 200
+                MainForm.EnergyBar.Value += 200
             Else
                 MainForm.EnergyBar.Value = 1000
             End If
@@ -146,11 +140,11 @@ Module Module1
                 injured = False
                 InventoryForm.Inventory.Items.Remove("CyberBandage")
                 Say("Your CyberPet is no longer injured.")
-                MsgBox("Your CyberPet is no longer injured.")
+            Else
+                Say("You do not have a CyberBandage.")
             End If
         Else
             Say("Your CyberPet is not injured.")
-            MsgBox("Your CyberPet is not injured.")
         End If
     End Sub
     ''' <summary>
@@ -162,13 +156,13 @@ Module Module1
         Dim speechcheck As Integer
         speechcheck = randomclass.Next(1, 4)
         If (speechcheck = 1) Then
-            Say("OUCH!")
+            Say("OUCH!", False)
         ElseIf (speechcheck = 2) Then
-            Say("Stop it")
+            Say("Stop it", False)
         ElseIf (speechcheck = 3) Then
-            Say("You are annoying me")
+            Say("You are annoying me", False)
         ElseIf (speechcheck = 4) Then
-            Say("ow")
+            Say("ow", False)
         End If
     End Sub
     ''' <summary>
@@ -180,8 +174,7 @@ Module Module1
         If (MainForm.ExperienceBar.Value = MainForm.ExperienceBar.Maximum) Then
             MainForm.ExperienceBar.Value = 0
             Say("Level! Up!")
-            MsgBox("Level up!")
-            Level = Level + 1
+            Level += 1
         End If
     End Sub
     ''' <summary>
@@ -194,11 +187,9 @@ Module Module1
             MainForm.ToiletBar.Value = 1
             If (injured = False) Then
                 Say("Your pet's bladder exploded. Your pet has become injured.")
-                MsgBox("Your pet's bladder exploded. Your pet has become injured.")
                 injured = True
             Else
                 Say("You pet needed the toilet. Your pet has died.")
-                MsgBox("You pet needed the toilet. Your pet has died.")
                 newgame()
             End If
         End If
@@ -310,7 +301,6 @@ Module Module1
             MainForm.HungerBar.Value = 1000
             MainForm.HealthBar.Value = 1000
             Say("Your pet has died")
-            MsgBox("Your pet has died")
             newgame()
 
         End If
@@ -424,16 +414,12 @@ Module Module1
         Dim karmaAdd As Double = (Module1.randomclass.Next(1, 5)) / 10
         If (MainForm.EnergyBar.Value > 199) Then
             Say("You play with your cyberpet")
-            MsgBox("You play with your cyberpet.")
             Say("You recieved " & karmaAdd & " karma")
-            MsgBox("You recieved: " & karmaAdd & " karma.")
             Say("Your pet used up twenty percent energy")
-            MsgBox("Your pet used up 20% energy")
-            karmabuffer = karmabuffer + karmaAdd
-            MainForm.EnergyBar.Value = MainForm.EnergyBar.Value - 200
+            karmabuffer += karmaAdd
+            MainForm.EnergyBar.Value -= 200
         Else
             Say("You do not have enough energy")
-            MsgBox("You do not have enough energy")
         End If
     End Sub
     ''' <summary>
@@ -441,10 +427,9 @@ Module Module1
     ''' </summary>
     ''' <param name="Speech"></param>
     ''' <remarks></remarks>
-    Public Sub Say(ByVal Speech As String)
-        '' Creates a sound based on a text string
-        speaker = New SpeechSynthesizer()
+    Public Sub Say(Speech As String, Optional showMsg As Boolean = True)
         '   speaker.SelectVoice("Microsoft Anna")
         speaker.SpeakAsync(Speech)
+        If (showMsg) Then MsgBox(Speech)
     End Sub
 End Module

@@ -15,20 +15,20 @@ Public Class MainForm
         updatecash()
         '' update of progressbars and verticalprogressbars
         If (HungerBar.Value > 0) Then
-            HungerBar.Value = HungerBar.Value - 1
+            HungerBar.Value -= 1
         End If
         If (ThirstBar.Value > 0) Then
-            ThirstBar.Value = ThirstBar.Value - 1
+            ThirstBar.Value -= 1
         End If
         If (ToiletBar.Value < 1000) Then
             If (age > 0) Then
                 If (age < 11) Then
-                    ToiletBar.Value = ToiletBar.Value + age
+                    ToiletBar.Value += age
                 Else
-                    ToiletBar.Value = ToiletBar.Value + 10
+                    ToiletBar.Value += 10
                 End If
             Else
-                ToiletBar.Value = ToiletBar.Value + 1
+                ToiletBar.Value += 1
             End If
         End If
         '' Checks if actions are needed based on progressbar values
@@ -41,14 +41,14 @@ Public Class MainForm
         Dim counter As Byte
         If (counter = 0) Then
             stoptime = Now
-            counter = counter + 1
+            counter += 1
         End If
         TimeText = (DateDiff("s", starttime, stoptime))
         TimeLabel.Text = Convert.ToString(minutes) & " : " & TimeText
         If (TimeText > 59) Then
             '' when 60 seconds have passed, seconds timer is reset, minutes timer is increased
-            age = age + 1
-            minutes = minutes + 1
+            age += 1
+            minutes += 1
             TimeLabel.Text = Convert.ToString(minutes) & " : " & TimeText
             starttime = Now
         End If
@@ -98,16 +98,12 @@ Public Class MainForm
             If (EnergyBar.Value > 49) Then
                 If (HealthBar.Value > 0) Then
                     Say("You fight a weak enemy")
-                    MsgBox("You fight a weak enemy.")
                     ''checks if you win
                     If (fightchanceweak > 4) Then
                         '' Tells the user the fight details
                         Say("you win the fight")
-                        MsgBox("You win the fight.")
                         Say("You recieved: " & fightmoneyadd & " Cybercash and " & experienceadd & "experience points")
-                        MsgBox("You recieved: " & fightmoneyadd & " Cybercash and " & experienceadd & "experience points")
                         Say("You used up five percent energy")
-                        MsgBox("You used up 5% energy")
                         '' updates values
                         Cash = Cash + fightmoneyadd
                         EnergyBar.Value = EnergyBar.Value - 50
@@ -122,11 +118,8 @@ Public Class MainForm
 
                     Else
                         Say("You lose the fight.")
-                        MsgBox("You lose the fight.")
                         Say("You lost: " & fightmoneyadd & "CyberCash and became injured.")
-                        MsgBox("You lost: " & fightmoneyadd & "CyberCash and became injured.")
                         Say("You used up fifteen percent energy")
-                        MsgBox("You used up 15% energy")
                         If (Cash - fightmoneyadd > -1) Then
                             Cash = Cash - fightmoneyadd
                             MoneyLost = MoneyLost + fightmoneyadd
@@ -140,7 +133,6 @@ Public Class MainForm
             End If
         Else
             Say("Your pet is injured and cannot fight.")
-            MsgBox("Your pet is injured and cannot fight.")
         End If
     End Sub
     Private Sub MEDIUMToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MEDIUMToolStripMenuItem1.Click
@@ -158,15 +150,11 @@ Public Class MainForm
             If (EnergyBar.Value > 249) Then
                 If (HealthBar.Value > 0) Then
                     Say("You fight a medium strength enemy.")
-                    MsgBox("You fight a medium strength enemy.")
                     '' checks if you win
                     If (fightchancemedium > 14) Then
                         Say("You win the fight.")
-                        MsgBox("You win the fight.")
                         Say("You recieved: " & fightmoneyaddmedium & " Cybercash, and " & experienceadd & "experience points")
-                        MsgBox("You recieved: " & fightmoneyaddmedium & " Cybercash, and " & experienceadd & "experience points")
                         Say("You used up ten percent energy")
-                        MsgBox("You used up 10% energy")
                         '' updates variables
                         Cash = Cash + fightmoneyaddmedium
                         EnergyBar.Value = EnergyBar.Value - 100
@@ -179,11 +167,8 @@ Public Class MainForm
                         karmanegativebuffer = karmanegativebuffer + fightkarmaadd
                     Else
                         Say("You lose the fight.")
-                        MsgBox("You lose the fight.")
                         Say("You lost: " & fightmoneyaddmedium & "CyberCash and became injured.")
-                        MsgBox("You lost: " & fightmoneyaddmedium & "CyberCash and became injured.")
                         Say("You used up twenty five percent energy")
-                        MsgBox("You used up 25% energy")
                         Cash = Cash - fightmoneyaddmedium
                         If (Cash - fightmoneyaddmedium > -1) Then
                             Cash = Cash - fightmoneyaddmedium
@@ -198,7 +183,6 @@ Public Class MainForm
             End If
         Else
             Say("Your pet is injured and cannot fight.")
-            MsgBox("Your pet is injured and cannot fight.")
         End If
     End Sub
     Private Sub SAVEToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SAVEToolStripMenuItem1.Click
@@ -321,7 +305,6 @@ Public Class MainForm
     Private Sub KILLToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KILLToolStripMenuItem1.Click
         '' Kills the pet to start a new game
         Say("Your pet has died.")
-        MsgBox("Your pet has died.")
         newgame()
     End Sub
     Private Sub ToolStripMenuItem6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem6.Click
@@ -341,12 +324,10 @@ Public Class MainForm
         If (sleepboolean = False) Then
             SLEEPToolStripMenuItem.Text = "WAKE"
             Say("Your pet is asleep")
-            MsgBox("Your pet is asleep")
             sleepboolean = True
         Else
             SLEEPToolStripMenuItem.Text = "SLEEP"
             Say("Your pet has woken up")
-            MsgBox("Your pet has woken up")
             sleepboolean = False
         End If
     End Sub
@@ -356,11 +337,8 @@ Public Class MainForm
         Dim moneyAdd As Integer = (Module1.randomclass.Next((WorkLevel * 5), ((WorkLevel * 5) * WorkLevel)))
         If (EnergyBar.Value > 99) Then
             Say("Your pet goes to work.")
-            MsgBox("Your pet goes to work.")
             Say("You recieved: " & moneyAdd & " CyberCash")
-            MsgBox("You recieved: " & moneyAdd & " CyberCash")
             Say("You used up ten percent energy")
-            MsgBox("You used up 10% energy")
             '' Updates values
             Cash = Cash + moneyAdd
             EnergyBar.Value = EnergyBar.Value - 100
@@ -371,7 +349,6 @@ Public Class MainForm
             MoneyEarned = MoneyEarned + moneyAdd
         Else
             Say("You do not have enough energy")
-            MsgBox("You do not have enough energy")
         End If
     End Sub
     Private Sub ToolStripMenuItem15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem15.Click
@@ -388,7 +365,6 @@ Public Class MainForm
             karmabuffer = 0
         Else
             Say("You have exceeded the amount of emergency cash withdrawals.")
-            MsgBox("You have exceeded the amount of emergency cash withdrawals.")
             emergencycounter = emergencycounter + 1
         End If
     End Sub
@@ -407,15 +383,11 @@ Public Class MainForm
             If (EnergyBar.Value > 249) Then
                 If (HealthBar.Value > 0) Then
                     Say("You fight a strong enemy.")
-                    MsgBox("You fight a strong enemy.")
                     '' Checks if the pet wins
                     If (fightchancestrong > 49) Then
                         Say("You win the fight.")
-                        MsgBox("You win the fight.")
                         Say("You recieved: " & fightmoneyaddstrong & " Cybercash, and " & experienceadd & "experience points")
-                        MsgBox("You recieved: " & fightmoneyaddstrong & " Cybercash, and " & experienceadd & "experience points")
                         Say("You used up thirty percent energy")
-                        MsgBox("You used up 30% energy")
                         ''Updates values
                         Cash = Cash + fightmoneyaddstrong
                         EnergyBar.Value = EnergyBar.Value - 100
@@ -428,11 +400,8 @@ Public Class MainForm
                         karmanegativebuffer = karmanegativebuffer + fightkarmaadd
                     Else
                         Say("You lose the fight.")
-                        MsgBox("You lose the fight.")
                         Say("You lost: " & fightmoneyaddstrong & "CyberCash and became injured.")
-                        MsgBox("You lost: " & fightmoneyaddstrong & "CyberCash and became injured.")
                         Say("You used up fifty percent energy")
-                        MsgBox("You used up 50% energy")
                         Cash = Cash - fightmoneyaddstrong
                         If (Cash - fightmoneyaddstrong > -1) Then
                             Cash = Cash - fightmoneyaddstrong
@@ -447,7 +416,6 @@ Public Class MainForm
             End If
         Else
             Say("Your pet is injured and cannot fight.")
-            MsgBox("Your pet is injured and cannot fight.")
         End If
     End Sub
     Private Sub ToolStripMenuItem13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem13.Click

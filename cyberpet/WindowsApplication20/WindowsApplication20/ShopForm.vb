@@ -10,7 +10,6 @@
                 MoneySpent = MoneySpent + 5
             Else
                 Say("You do not have enough CyberCash")
-                MsgBox("You do not have enough CyberCash")
             End If
         End If
         '' checks if drink is selected
@@ -24,7 +23,6 @@
 
             Else
                 Say("You do not have enough CyberCash")
-                MsgBox("You do not have enough CyberCash")
             End If
         End If
         '' checks if boost is selected
@@ -37,7 +35,6 @@
                 MoneySpent = MoneySpent + 10
             Else
                 Say("You do not have enough CyberCash")
-                MsgBox("You do not have enough CyberCash")
             End If
         End If
         ''Checks if bandage is selected
@@ -50,7 +47,6 @@
                 MoneySpent = MoneySpent + 25
             Else
                 Say("You do not have enough CyberCash")
-                MsgBox("You do not have enough CyberCash")
             End If
         End If
     End Sub

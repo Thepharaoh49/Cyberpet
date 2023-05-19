@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="GeneralText.Text" xml:space="preserve">
-    <value>Designed, Created and Programmed by Luke Woodward
-All Rights Reserved
-Version number V.1.0.0
-Contact address: Thepharaoh49@hotmail.co.uk
-
-CyberPet Project 2011 created as a College Project for West Suffolk College
-</value>
-  </data>
   <data name="HelpText.Text" xml:space="preserve">
     <value>Name
 When the CyberPet loads, you will be presented with a form to name your pet. Insert the name into the textbox, and press OK. This will update your name. If you ever want to change your name, this can be done for free by pressing "RENAME" on the lower toolbar.
