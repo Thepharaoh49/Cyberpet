@@ -1,7 +1,7 @@
 ﻿Public Class StatsForm
     Private Sub StatsForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         WorkLevelLabel.Text = "Work Level: " & Pet.WorkLevel
-        KarmaLevelLabel.Text = "Karma Level: " & MainForm.KarmaBar.Value
+        KarmaLevelLabel.Text = "Karma Level: " & Pet.Karma
         StatsFormCashLabel.Text = "CyberCash: £" & Settings.Cash
         StatsFormAgeLabel.Text = "Age: " & Pet.Age
         MoneySpentLabel.Text = "CyberCash Spent: £" & MoneySpent

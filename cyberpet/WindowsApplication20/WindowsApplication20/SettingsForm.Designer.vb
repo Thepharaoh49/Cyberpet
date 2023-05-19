@@ -33,6 +33,10 @@ Partial Class SettingsForm
         Me.TimeCheckLabel = New System.Windows.Forms.Label()
         Me.TimeYes = New System.Windows.Forms.RadioButton()
         Me.TimeNo = New System.Windows.Forms.RadioButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TTSCheckBox = New System.Windows.Forms.CheckBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.MsgCheckbox = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'SpeedLabel
@@ -101,7 +105,7 @@ Partial Class SettingsForm
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Blue", "Red", "Green", "Pink"})
-        Me.ComboBox1.Location = New System.Drawing.Point(138, 42)
+        Me.ComboBox1.Location = New System.Drawing.Point(176, 41)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 6
@@ -120,7 +124,7 @@ Partial Class SettingsForm
         'TimeYes
         '
         Me.TimeYes.AutoSize = True
-        Me.TimeYes.Location = New System.Drawing.Point(111, 70)
+        Me.TimeYes.Location = New System.Drawing.Point(175, 70)
         Me.TimeYes.Name = "TimeYes"
         Me.TimeYes.Size = New System.Drawing.Size(43, 17)
         Me.TimeYes.TabIndex = 8
@@ -131,7 +135,7 @@ Partial Class SettingsForm
         'TimeNo
         '
         Me.TimeNo.AutoSize = True
-        Me.TimeNo.Location = New System.Drawing.Point(169, 71)
+        Me.TimeNo.Location = New System.Drawing.Point(233, 71)
         Me.TimeNo.Name = "TimeNo"
         Me.TimeNo.Size = New System.Drawing.Size(39, 17)
         Me.TimeNo.TabIndex = 9
@@ -139,12 +143,56 @@ Partial Class SettingsForm
         Me.TimeNo.Text = "No"
         Me.TimeNo.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 97)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(99, 16)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Enable TTS?"
+        '
+        'TTSCheckBox
+        '
+        Me.TTSCheckBox.AutoSize = True
+        Me.TTSCheckBox.Location = New System.Drawing.Point(175, 97)
+        Me.TTSCheckBox.Name = "TTSCheckBox"
+        Me.TTSCheckBox.Size = New System.Drawing.Size(65, 17)
+        Me.TTSCheckBox.TabIndex = 11
+        Me.TTSCheckBox.Text = "Enabled"
+        Me.TTSCheckBox.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 120)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(159, 16)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Enable dialog boxes?"
+        '
+        'MsgCheckbox
+        '
+        Me.MsgCheckbox.AutoSize = True
+        Me.MsgCheckbox.Location = New System.Drawing.Point(176, 122)
+        Me.MsgCheckbox.Name = "MsgCheckbox"
+        Me.MsgCheckbox.Size = New System.Drawing.Size(65, 17)
+        Me.MsgCheckbox.TabIndex = 13
+        Me.MsgCheckbox.Text = "Enabled"
+        Me.MsgCheckbox.UseVisualStyleBackColor = True
+        '
         'SettingsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(352, 105)
+        Me.ClientSize = New System.Drawing.Size(352, 154)
+        Me.Controls.Add(Me.MsgCheckbox)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TTSCheckBox)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TimeNo)
         Me.Controls.Add(Me.TimeYes)
         Me.Controls.Add(Me.TimeCheckLabel)
@@ -173,4 +221,8 @@ Partial Class SettingsForm
     Friend WithEvents TimeCheckLabel As System.Windows.Forms.Label
     Friend WithEvents TimeYes As System.Windows.Forms.RadioButton
     Friend WithEvents TimeNo As System.Windows.Forms.RadioButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TTSCheckBox As CheckBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents MsgCheckbox As CheckBox
 End Class

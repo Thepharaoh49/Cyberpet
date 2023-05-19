@@ -22,7 +22,10 @@ Public Class MainForm
             .FormatString = "Age: 0",
             .FormattingEnabled = True
         })
-        Pet.Age = 0
+        MainCashLabel.DataBindings.Add(New Binding("Text", Settings, "Cash") With {
+            .FormatString = "£0",
+            .FormattingEnabled = True
+        })
     End Sub
     Public Sub UpdateUI()
         '' Changes time label to display time
@@ -53,18 +56,22 @@ Public Class MainForm
     End Sub
     Private Sub FOODToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FOODToolStripMenuItem1.Click
         '' feeds the pet
+        If (Settings.Paused) Then Return
         Feed()
     End Sub
     Private Sub DRINKToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DRINKToolStripMenuItem1.Click
         '' gives the pet a drink
+        If (Settings.Paused) Then Return
         UseDrink()
     End Sub
     Private Sub SHOPToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SHOPToolStripMenuItem1.Click
         '' opens the shop
+        If (Settings.Paused) Then Return
         ShopForm.Show()
     End Sub
     Private Sub PLAYToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PLAYToolStripMenuItem1.Click
         '' plays with the pet
+        If (Settings.Paused) Then Return
         Pet.Play()
     End Sub
     Private Sub FightEnemy(enemyLevel As String)
@@ -127,12 +134,15 @@ Public Class MainForm
 
     End Sub
     Private Sub WEAKToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WEAKToolStripMenuItem1.Click
+        If (Settings.Paused) Then Return
         FightEnemy("Weak")
     End Sub
     Private Sub MEDIUMToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MEDIUMToolStripMenuItem1.Click
+        If (Settings.Paused) Then Return
         FightEnemy("Medium")
     End Sub
     Private Sub STRONGToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles STRONGToolStripMenuItem1.Click
+        If (Settings.Paused) Then Return
         FightEnemy("Strong")
     End Sub
     Private Sub SAVEToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SAVEToolStripMenuItem1.Click
@@ -170,11 +180,13 @@ Public Class MainForm
     End Sub
     Private Sub KILLToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KILLToolStripMenuItem1.Click
         '' Kills the pet to start a new game
+        If (Settings.Paused) Then Return
         Say("Your pet has died.")
         NewGame()
     End Sub
     Private Sub ToolStripMenuItem6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem6.Click
         '' shows the inventory form
+        If (Settings.Paused) Then Return
         InventoryForm.Show()
     End Sub
     Private Sub ToolStripMenuItem10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem10.Click
@@ -183,9 +195,11 @@ Public Class MainForm
     End Sub
     Private Sub TOILETToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TOILETToolStripMenuItem.Click
         '' Sends the pet to the toilet
+        If (Settings.Paused) Then Return
         Pet.Toilet = 0
     End Sub
     Private Sub SLEEPToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SLEEPToolStripMenuItem.Click
+        If (Settings.Paused) Then Return
         '' Toggles between awake and asleep
         If (Pet.Asleep = False) Then
             SLEEPToolStripMenuItem.Text = "WAKE"
@@ -196,8 +210,10 @@ Public Class MainForm
             Say("Your pet has woken up")
             Pet.Asleep = False
         End If
+        CheckKarma()
     End Sub
     Private Sub ToolStripMenuItem12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem12.Click
+        If (Settings.Paused) Then Return
         ''Sends pet to work to earn money
         '' Calculates money to add
         Dim moneyAdd As Integer = (Module1.random.Next((Pet.WorkLevel * 5), ((Pet.WorkLevel * 5) * Pet.WorkLevel)))
@@ -228,6 +244,7 @@ Public Class MainForm
         AboutForm.Show()
     End Sub
     Private Sub PUNISHToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PUNISHToolStripMenuItem.Click
+        If (Settings.Paused) Then Return
         ''Punishes the pet
         Pet.Punish()
     End Sub

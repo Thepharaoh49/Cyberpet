@@ -159,7 +159,6 @@ Public Class Cyberpet
     ''' <summary>
     ''' "plays" with the cyberpet, increasing karma and decreasing energy
     ''' </summary>
-
     Public Sub Play()
         '' Plays with the cyberpet
         Dim karmaAdd As Double = (Module1.random.Next(1, 5)) / 10

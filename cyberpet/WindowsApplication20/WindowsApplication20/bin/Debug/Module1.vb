@@ -162,7 +162,11 @@ Module Module1
 
     Public Sub Say(Speech As String, Optional showMsg As Boolean = True)
         '   speaker.SelectVoice("Microsoft Anna")
-        Speaker.SpeakAsync(Speech)
-        If (showMsg) Then MsgBox(Speech)
+        If (Settings.TTSEnabled) Then
+            Speaker.SpeakAsync(Speech)
+        End If
+        If (Settings.MsgEnabled) Then
+            If (showMsg) Then MsgBox(Speech)
+        End If
     End Sub
 End Module
