@@ -1,0 +1,17 @@
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Release\WindowsApplication20.exe.config
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Release\WindowsApplication20.exe
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Release\WindowsApplication20.pdb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Release\WindowsApplication20.xml
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\ResolveAssemblyReference.cache
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.StatsForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.InventoryForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.MainForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.NameForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.PauseForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.Resources.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.ShopForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\GenerateResource.read.1.tlog
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\GenerateResource.write.1.tlog
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.exe
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.xml
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Release\WindowsApplication20.pdb

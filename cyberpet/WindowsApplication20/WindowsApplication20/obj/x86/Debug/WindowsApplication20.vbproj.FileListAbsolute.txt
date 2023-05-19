@@ -1,0 +1,304 @@
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.pdb
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.xml
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\ResolveAssemblyReference.cache
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\GenerateResource.read.1.tlog
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\GenerateResource.write.1.tlog
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.exe
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.xml
+\\adata1\users\luke.woodward49\my documents\visual studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.pdb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\GenerateResource.read.1.tlog
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\GenerateResource.write.1.tlog
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.StatsForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.InventoryForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.MainForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.NameForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.PauseForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.Resources.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.ShopForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe.config
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.pdb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.xml
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.exe
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.xml
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.pdb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe.config
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.resx
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.resx
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.resx
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.resx
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.resx
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.resx
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.Designer.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.Designer.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.Designer.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.Designer.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.Designer.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.Designer.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Module1.vb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.AboutForm.resources
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.StatsForm.resources
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.InventoryForm.resources
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.MainForm.resources
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.NameForm.resources
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.PauseForm.resources
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.Resources.resources
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.ShopForm.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe.config
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.exe
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.xml
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.pdb
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.AboutForm.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.StatsForm.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.InventoryForm.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.MainForm.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.NameForm.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.PauseForm.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.Resources.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.ShopForm.resources
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\GenerateResource.read.1.tlog
+G:\Other Things\WindowsApplication20\WindowsApplication20\obj\x86\Debug\GenerateResource.write.1.tlog
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.resx
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.resx
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.resx
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.resx
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.resx
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.resx
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.Designer.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.Designer.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.Designer.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.Designer.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.Designer.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.Designer.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Module1.vb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.pdb
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.xml
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9AWAKE.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1ASLEEP.png
+G:\Other Things\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1ASLEEP.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1AWAKE.png
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.resx
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.resx
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.resx
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.resx
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.resx
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.resx
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.Designer.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.Designer.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.Designer.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.Designer.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.Designer.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.Designer.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Module1.vb
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.AboutForm.resources
+G:\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.SettingsForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe.config
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1ASLEEP.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1AWAKE.png
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.resx
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.resx
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.resx
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.resx
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.resx
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.resx
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.Designer.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.Designer.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.Designer.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.Designer.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.Designer.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.Designer.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\Module1.vb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.pdb
+G:\Portfolio\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.xml
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.AboutForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.SettingsForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.StatsForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.InventoryForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.MainForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.NameForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.PauseForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.Resources.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.ShopForm.resources
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\GenerateResource.read.1.tlog
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\GenerateResource.write.1.tlog
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.exe
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.xml
+G:\Portfolio\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.pdb
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1ASLEEP.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1AWAKE.png
+\\Adata1\Users\luke.woodward49\My Documents\Visual Studio 2010\Projects\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.SettingsForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.vbprojAssemblyReference.cache
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.exe
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.xml
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.pdb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body0AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body1AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body2AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body3AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body4AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body5AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body6AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body7AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body8AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body9AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1ASLEEP.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Resources\Body_1AWAKE.png
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.resx
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.resx
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.resx
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.resx
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.resx
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.resx
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.Designer.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\StatsForm.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.Designer.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\InventoryForm.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.Designer.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\ShopForm.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\MainForm.Designer.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.Designer.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\NameForm.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.Designer.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\PauseForm.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\Module1.vb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe.config
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.exe
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.pdb
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\bin\Debug\WindowsApplication20.xml
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.AboutForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.SettingsForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.StatsForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.InventoryForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.MainForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.NameForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.PauseForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.Resources.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\CyberPet.ShopForm.resources
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.vbproj.GenerateResource.cache
+C:\Users\Luke\Desktop\cyberpet\WindowsApplication20\WindowsApplication20\obj\x86\Debug\WindowsApplication20.vbproj.CoreCompileInputs.cache

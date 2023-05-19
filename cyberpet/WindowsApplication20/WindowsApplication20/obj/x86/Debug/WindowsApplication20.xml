@@ -1,0 +1,161 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WindowsApplication20
+</name>
+</assembly>
+<members>
+<member name="T:CyberPet.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:CyberPet.Module1.punish">
+ <summary>
+ Punishes the pet, causing injury.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.workcheck">
+ <summary>
+ Checks for a level up in work
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.feed">
+ <summary>
+ Gives the cyberpet food
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.givedrink">
+ <summary>
+ gives the cyberpet drink
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.giveboost">
+ <summary>
+ Gives the cyberpet an energy boost
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.givebandage">
+ <summary>
+ Gives the pet a bandage, healing injury
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.annoy">
+ <summary>
+ Produces a random speech-synthesised string from a selection
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.experiencecheck">
+ <summary>
+ Checks for a level up
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.ToiletCheck">
+ <summary>
+ Checks the need for toilet
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.SleepCheck">
+ <summary>
+ Checks whether the pet is asleep and regaining energy
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.Karmaupdate">
+ <summary>
+ Adds one to the karma if the buffer is at 1
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.updatecash">
+ <summary>
+ Sets all cash labels to display up to date
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.karmacheck">
+ <summary>
+ Changes the colour of the karmabar to suit the karma level
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.injurycheck">
+ <summary>
+ Sets health value based on injury
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.HealthCheck">
+ <summary>
+ Checks whether the health has hit 0 or not
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.CheckBodyType">
+ <summary>
+ Updates the colour of the pet, and whether it is awake or not
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.newgame">
+ <summary>
+ Starts a new game
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.pausegame(System.Boolean)">
+ <summary>
+ Pauses the game
+ </summary>
+ <param name="PauseBoolean"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.checkbars">
+ <summary>
+ Runs subroutines as above
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.Backgroundcheck">
+ <summary>
+ Sets the background of the settings form
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.play">
+ <summary>
+ "plays" with the cyberpet, increasing karma and decreasing energy
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CyberPet.Module1.Say(System.String)">
+ <summary>
+ Allows speech synthesis
+ </summary>
+ <param name="Speech"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>
