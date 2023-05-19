@@ -79,6 +79,8 @@
     <Compile Include="AboutForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cyberpet.vb" />
+    <Compile Include="GameSettings.vb" />
     <Compile Include="SettingsForm.Designer.vb">
       <DependentUpon>SettingsForm.vb</DependentUpon>
     </Compile>
@@ -126,14 +128,6 @@
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="PauseForm.Designer.vb">
-      <DependentUpon>PauseForm.vb</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="PauseForm.vb">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Module1.vb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
@@ -176,10 +170,6 @@
       <DependentUpon>NameForm.vb</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="PauseForm.resx">
-      <DependentUpon>PauseForm.vb</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -202,7 +192,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Resources\Body0.png" />
     <None Include="Resources\Body1.png" />
     <None Include="Resources\Body2.png" />
     <None Include="Resources\Body3.png" />
@@ -212,17 +201,12 @@
     <None Include="Resources\Body7.png" />
     <None Include="Resources\Body8.png" />
     <None Include="Resources\Body9.png" />
+    <None Include="Resources\Body10.png" />
     <None Include="Resources\DefaultMouth.png" />
     <None Include="Resources\EvilMouth.png" />
     <Content Include="Resources\GoodMouth.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Body0ASLEEP.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Body0AWAKE.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Body1ASLEEP.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -277,13 +261,19 @@
     <Content Include="Resources\Body9AWAKE.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Body_1.png">
+    <Content Include="Resources\Body10ASLEEP.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Body_1ASLEEP.png">
+    <Content Include="Resources\Body10AWAKE.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Body_1AWAKE.png">
+    <Content Include="Resources\Body0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Body0ASLEEP.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Body0AWAKE.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

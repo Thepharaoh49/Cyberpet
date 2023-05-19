@@ -208,14 +208,14 @@
   <data name="Body9AWAKE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Body9AWAKE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Body_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Body_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Body10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Body10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Body_1ASLEEP" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Body_1ASLEEP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Body10ASLEEP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Body10ASLEEP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Body_1AWAKE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Body_1AWAKE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Body10AWAKE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Body10AWAKE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DefaultMouth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DefaultMouth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

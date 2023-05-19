@@ -83,9 +83,9 @@ Partial Class MainForm
         Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmergencyCashButton = New System.Windows.Forms.Button()
         Me.ExperienceBar = New System.Windows.Forms.ProgressBar()
-        Me.ToiletBar = New CyberPet.VerticalProgressBar()
-        Me.EnergyBar = New CyberPet.VerticalProgressBar()
-        Me.HealthBar = New CyberPet.VerticalProgressBar()
+        Me.ToiletBar = New VerticalProgressBar()
+        Me.EnergyBar = New VerticalProgressBar()
+        Me.HealthBar = New VerticalProgressBar()
         CType(Me.PetBodyDisplay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.MenuStrip2.SuspendLayout()
@@ -378,7 +378,7 @@ Partial Class MainForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FOODToolStripMenuItem1, Me.DRINKToolStripMenuItem1, Me.SHOPToolStripMenuItem1, Me.PLAYToolStripMenuItem1, Me.FIGHTToolStripMenuItem1, Me.SAVEToolStripMenuItem1, Me.LOADToolStripMenuItem1, Me.KILLToolStripMenuItem1, Me.SETTINGSToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(649, 25)
+        Me.MenuStrip1.Size = New System.Drawing.Size(639, 25)
         Me.MenuStrip1.TabIndex = 22
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -407,7 +407,7 @@ Partial Class MainForm
         '
         Me.PLAYToolStripMenuItem1.Name = "PLAYToolStripMenuItem1"
         Me.PLAYToolStripMenuItem1.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.PLAYToolStripMenuItem1.Size = New System.Drawing.Size(60, 21)
+        Me.PLAYToolStripMenuItem1.Size = New System.Drawing.Size(59, 21)
         Me.PLAYToolStripMenuItem1.Text = "PLAY"
         '
         'FIGHTToolStripMenuItem1
@@ -440,7 +440,7 @@ Partial Class MainForm
         '
         Me.SAVEToolStripMenuItem1.Name = "SAVEToolStripMenuItem1"
         Me.SAVEToolStripMenuItem1.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.SAVEToolStripMenuItem1.Size = New System.Drawing.Size(60, 21)
+        Me.SAVEToolStripMenuItem1.Size = New System.Drawing.Size(59, 21)
         Me.SAVEToolStripMenuItem1.Text = "SAVE"
         '
         'LOADToolStripMenuItem1
@@ -470,9 +470,9 @@ Partial Class MainForm
         Me.MenuStrip2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem6, Me.ToolStripMenuItem10, Me.TOILETToolStripMenuItem, Me.SLEEPToolStripMenuItem, Me.PUNISHToolStripMenuItem, Me.ToolStripMenuItem12, Me.ToolStripMenuItem15, Me.ToolStripMenuItem13})
-        Me.MenuStrip2.Location = New System.Drawing.Point(0, 387)
+        Me.MenuStrip2.Location = New System.Drawing.Point(0, 376)
         Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(649, 25)
+        Me.MenuStrip2.Size = New System.Drawing.Size(639, 25)
         Me.MenuStrip2.TabIndex = 23
         Me.MenuStrip2.Text = "MenuStrip2"
         '
@@ -487,7 +487,7 @@ Partial Class MainForm
         '
         Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
         Me.ToolStripMenuItem10.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(98, 21)
+        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(96, 21)
         Me.ToolStripMenuItem10.Text = "STATISTICS"
         '
         'TOILETToolStripMenuItem
@@ -528,8 +528,8 @@ Partial Class MainForm
         'ToolStripMenuItem13
         '
         Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(64, 21)
-        Me.ToolStripMenuItem13.Text = "ABOUT"
+        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(52, 21)
+        Me.ToolStripMenuItem13.Text = "HELP"
         '
         'EmergencyCashButton
         '
@@ -547,9 +547,9 @@ Partial Class MainForm
         Me.ExperienceBar.BackColor = System.Drawing.Color.DarkGray
         Me.ExperienceBar.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ExperienceBar.ForeColor = System.Drawing.Color.Fuchsia
-        Me.ExperienceBar.Location = New System.Drawing.Point(0, 377)
+        Me.ExperienceBar.Location = New System.Drawing.Point(0, 366)
         Me.ExperienceBar.Name = "ExperienceBar"
-        Me.ExperienceBar.Size = New System.Drawing.Size(649, 10)
+        Me.ExperienceBar.Size = New System.Drawing.Size(639, 10)
         Me.ExperienceBar.Step = 1
         Me.ExperienceBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee
         Me.ExperienceBar.TabIndex = 25
@@ -597,7 +597,7 @@ Partial Class MainForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(649, 412)
+        Me.ClientSize = New System.Drawing.Size(639, 401)
         Me.Controls.Add(Me.ExperienceBar)
         Me.Controls.Add(Me.EmergencyCashButton)
         Me.Controls.Add(Me.MenuStrip2)
@@ -658,16 +658,16 @@ Partial Class MainForm
     Friend WithEvents AgeLabel As System.Windows.Forms.Label
     Friend WithEvents PetBodyDisplay As System.Windows.Forms.PictureBox
     Friend WithEvents KarmaBar As System.Windows.Forms.ProgressBar
-    Friend WithEvents HealthBar As CyberPet.VerticalProgressBar
+    Friend WithEvents HealthBar As VerticalProgressBar
     Friend WithEvents HungerBar As System.Windows.Forms.ProgressBar
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents ThirstBar As System.Windows.Forms.ProgressBar
     Friend WithEvents HealthLabel As System.Windows.Forms.Label
     Friend WithEvents HungerLabel As System.Windows.Forms.Label
     Friend WithEvents ThirstLabel As System.Windows.Forms.Label
-    Friend WithEvents EnergyBar As CyberPet.VerticalProgressBar
+    Friend WithEvents EnergyBar As VerticalProgressBar
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ToiletBar As CyberPet.VerticalProgressBar
+    Friend WithEvents ToiletBar As VerticalProgressBar
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents MainCashLabel As System.Windows.Forms.Label
     Friend WithEvents WeakToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

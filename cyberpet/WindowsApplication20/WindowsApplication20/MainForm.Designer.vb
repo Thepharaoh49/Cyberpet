@@ -83,9 +83,9 @@ Partial Class MainForm
         Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmergencyCashButton = New System.Windows.Forms.Button()
         Me.ExperienceBar = New System.Windows.Forms.ProgressBar()
-        Me.ToiletBar = New CyberPet.VerticalProgressBar()
-        Me.EnergyBar = New CyberPet.VerticalProgressBar()
-        Me.HealthBar = New CyberPet.VerticalProgressBar()
+        Me.ToiletBar = New VerticalProgressBar()
+        Me.EnergyBar = New VerticalProgressBar()
+        Me.HealthBar = New VerticalProgressBar()
         CType(Me.PetBodyDisplay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.MenuStrip2.SuspendLayout()
@@ -658,16 +658,16 @@ Partial Class MainForm
     Friend WithEvents AgeLabel As System.Windows.Forms.Label
     Friend WithEvents PetBodyDisplay As System.Windows.Forms.PictureBox
     Friend WithEvents KarmaBar As System.Windows.Forms.ProgressBar
-    Friend WithEvents HealthBar As CyberPet.VerticalProgressBar
+    Friend WithEvents HealthBar As VerticalProgressBar
     Friend WithEvents HungerBar As System.Windows.Forms.ProgressBar
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents ThirstBar As System.Windows.Forms.ProgressBar
     Friend WithEvents HealthLabel As System.Windows.Forms.Label
     Friend WithEvents HungerLabel As System.Windows.Forms.Label
     Friend WithEvents ThirstLabel As System.Windows.Forms.Label
-    Friend WithEvents EnergyBar As CyberPet.VerticalProgressBar
+    Friend WithEvents EnergyBar As VerticalProgressBar
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ToiletBar As CyberPet.VerticalProgressBar
+    Friend WithEvents ToiletBar As VerticalProgressBar
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents MainCashLabel As System.Windows.Forms.Label
     Friend WithEvents WeakToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

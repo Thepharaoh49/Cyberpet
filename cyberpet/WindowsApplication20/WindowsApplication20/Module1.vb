@@ -3,68 +3,36 @@ Imports System.Collections.ObjectModel
 
 Module Module1
 
+    Public Pet As Cyberpet = New Cyberpet
+    Public Settings As GameSettings = New GameSettings
     Public settingscolour As String
     Public starttime As Date
     Public stoptime As Date
-    Public BodyState As String
-    Public Level As Byte = 1
     Public emergencycounter As Byte
     Public MoneyLost As Integer
     Public MoneySpent As Integer
     Public MoneyEarned As Integer
-    Public WorkLevel As Byte = 1
-    Public workbuffer As Double = 0
-    Public speaker As SpeechSynthesizer = New SpeechSynthesizer()
-    Public sleepboolean As Boolean
-    Public injured As Boolean
-    Public PetName As String = ""
+    Public Speaker As SpeechSynthesizer = New SpeechSynthesizer()
     Public minutes As Integer = 0
     Public Basetime As Date
     Public TimeText As String = ""
-    Public age As Integer
-    Public BodyType As String
-    Public BodyTypeNumber As Integer
-    Public PauseBoolean As Boolean
-    Public dead As Boolean
-    Public Cash As Integer
+    Public Paused As Boolean
     Public pausetime As Date
     Public HealthVar As Integer
-    Public Food As Byte
-    Public Drink As Byte
-    Public Boost As Byte
-    Public counter3 As Byte = 0
     Public karmabuffer As Double = 0
-    Public karmanegativebuffer As Double = 0
-    Public Bandage As Byte
-    Public randomclass As New Random()
+    Public random As New Random()
     Public RandomNumber As Integer
-    ''' <summary>
-    ''' Punishes the pet, causing injury.
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub punish()
-        '' If the pet is not injured, it becomes injured
-        If (injured = False) Then
-            injured = True
-            ''The karma decreases.
-            MainForm.KarmaBar.Value = MainForm.KarmaBar.Value - 1
-            Say("You have injured your cyberpet. Karma - 1")
-        Else
-            ''if the pet was injured, it is killed
-            Say("You have killed your cyberpet.")
-            newgame()
-        End If
-    End Sub
+
     ''' <summary>
     ''' Checks for a level up in work
     ''' </summary>
     ''' <remarks></remarks>
     Public Sub workcheck()
-        If (workbuffer = 1) Then
-            WorkLevel += 1
-            Say("Work Level up! Work level is now: " & WorkLevel)
-            workbuffer = 0
-            If (WorkLevel = 100) Then
+        If (Pet.workbuffer = 1) Then
+            Pet.WorkLevel += 1
+            Say("Work Level up! Work level is now: " & Pet.WorkLevel)
+            Pet.workbuffer = 0
+            If (Pet.WorkLevel = 100) Then
                 Say("You have reached the maximum work level")
             End If
         End If
@@ -73,10 +41,10 @@ Module Module1
     ''' Gives the cyberpet food
     ''' </summary>
     ''' <remarks></remarks>
-    Public Sub feed()
+    Public Sub Feed()
         ''increases hungerbar and removes a food.
-        If (Food > 0) Then
-            Food = Food - 1
+        If (Settings.Food > 0) Then
+            Settings.Food -= 1
             If (MainForm.HungerBar.Value < 801) Then
                 MainForm.HungerBar.Value += 200
             Else
@@ -97,10 +65,10 @@ Module Module1
     ''' gives the cyberpet drink
     ''' </summary>
     ''' <remarks></remarks>
-    Public Sub givedrink()
+    Public Sub UseDrink()
         '' Increases thirstbar and removes a drink
-            If (Drink > 0) Then
-            Drink = Drink - 1
+        If (Settings.Drink > 0) Then
+            Settings.Drink -= 1
             If (MainForm.ThirstBar.Value < 801) Then
                 MainForm.ThirstBar.Value += 200
             Else
@@ -117,10 +85,10 @@ Module Module1
     ''' Gives the cyberpet an energy boost
     ''' </summary>
     ''' <remarks></remarks>
-    Public Sub giveboost()
+    Public Sub UseBoost()
         '' increases energybar and removes a boost
-        If (Boost > 0) Then
-            Boost = Boost - 1
+        If (Settings.Boost > 0) Then
+            Settings.Boost -= 1
             If (MainForm.EnergyBar.Value < 801) Then
                 MainForm.EnergyBar.Value += 200
             Else
@@ -132,12 +100,12 @@ Module Module1
     ''' Gives the pet a bandage, healing injury
     ''' </summary>
     ''' <remarks></remarks>
-    Public Sub givebandage()
+    Public Sub UseBandage()
         '' removes injury and bandage
-        If (injured = True) Then
-            If (Bandage > 0) Then
-                Bandage = Bandage - 1
-                injured = False
+        If (Pet.Injured = True) Then
+            If (Settings.Bandage > 0) Then
+                Settings.Bandage -= 1
+                Pet.Injured = False
                 InventoryForm.Inventory.Items.Remove("CyberBandage")
                 Say("Your CyberPet is no longer injured.")
             Else
@@ -151,10 +119,10 @@ Module Module1
     ''' Produces a random speech-synthesised string from a selection
     ''' </summary>
     ''' <remarks></remarks>
-    Public Sub annoy()
+    Public Sub Annoy()
         ''Chooses a phrase from a selection to say
         Dim speechcheck As Integer
-        speechcheck = randomclass.Next(1, 4)
+        speechcheck = random.Next(1, 4)
         If (speechcheck = 1) Then
             Say("OUCH!", False)
         ElseIf (speechcheck = 2) Then
@@ -174,7 +142,7 @@ Module Module1
         If (MainForm.ExperienceBar.Value = MainForm.ExperienceBar.Maximum) Then
             MainForm.ExperienceBar.Value = 0
             Say("Level! Up!")
-            Level += 1
+            Pet.Level += 1
         End If
     End Sub
     ''' <summary>
@@ -185,9 +153,9 @@ Module Module1
         ''Checks for actions needed based on toiletbar value
         If (MainForm.ToiletBar.Value > 999) Then
             MainForm.ToiletBar.Value = 1
-            If (injured = False) Then
+            If (Pet.Injured = False) Then
                 Say("Your pet's bladder exploded. Your pet has become injured.")
-                injured = True
+                Pet.Injured = True
             Else
                 Say("You pet needed the toilet. Your pet has died.")
                 newgame()
@@ -200,9 +168,9 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub SleepCheck()
         '' Increases energy when asleep
-        If (sleepboolean = True) Then
+        If (Pet.Asleep = True) Then
             If (MainForm.EnergyBar.Value < 1000) Then
-                MainForm.EnergyBar.Value = MainForm.EnergyBar.Value + 1
+                MainForm.EnergyBar.Value += 1
             Else
                 MainForm.EnergyBar.Value = 1000
             End If
@@ -214,13 +182,13 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub Karmaupdate()
         '' updates the karma when needed
-        If (karmanegativebuffer > 0.9) Then
-            MainForm.KarmaBar.Value = MainForm.KarmaBar.Value - 1
-            karmanegativebuffer = 0
+        If (karmabuffer < -0.9) Then
+            MainForm.KarmaBar.Value += 1
+            karmabuffer = 0
         End If
 
         If (karmabuffer > 0.9) Then
-            MainForm.KarmaBar.Value = MainForm.KarmaBar.Value + 1
+            MainForm.KarmaBar.Value += 1
             karmabuffer = 0
         End If
     End Sub
@@ -230,10 +198,10 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub updatecash()
         '' Updates the cash labels
-        MainForm.MainCashLabel.Text = "£" & Cash
+        MainForm.MainCashLabel.Text = "£" & Settings.Cash
 
-        ShopForm.ShopCashLabel.Text = "£" & Cash
-        InventoryForm.InventoryCashLabel.Text = "£" & Cash
+        ShopForm.ShopCashLabel.Text = "£" & Settings.Cash
+        InventoryForm.InventoryCashLabel.Text = "£" & Settings.Cash
     End Sub
     ''' <summary>
     ''' Changes the colour of the karmabar to suit the karma level
@@ -241,39 +209,31 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub karmacheck()
         ''Sets the karmabar colour to suit the karma level
-        If (MainForm.KarmaBar.Value = 0) Then
-            MainForm.KarmaBar.ForeColor = Color.Maroon
-        End If
-        If (MainForm.KarmaBar.Value = 1) Then
-            MainForm.KarmaBar.ForeColor = Color.DarkRed
-        End If
-        If (MainForm.KarmaBar.Value = 2) Then
-            MainForm.KarmaBar.ForeColor = Color.Red
-        End If
-        If (MainForm.KarmaBar.Value = 3) Then
-            MainForm.KarmaBar.ForeColor = Color.LightSalmon
-        End If
-        If (MainForm.KarmaBar.Value = 4) Then
-            MainForm.KarmaBar.ForeColor = Color.Pink
-        End If
-        If (MainForm.KarmaBar.Value = 5) Then
-            MainForm.KarmaBar.ForeColor = Color.White
-        End If
-        If (MainForm.KarmaBar.Value = 6) Then
-            MainForm.KarmaBar.ForeColor = Color.Khaki
-        End If
-        If (MainForm.KarmaBar.Value = 7) Then
-            MainForm.KarmaBar.ForeColor = Color.Yellow
-        End If
-        If (MainForm.KarmaBar.Value = 8) Then
-            MainForm.KarmaBar.ForeColor = Color.YellowGreen
-        End If
-        If (MainForm.KarmaBar.Value = 9) Then
-            MainForm.KarmaBar.ForeColor = Color.Chartreuse
-        End If
-        If (MainForm.KarmaBar.Value = 10) Then
-            MainForm.KarmaBar.ForeColor = Color.Green
-        End If
+        Select Case (MainForm.KarmaBar.Value)
+            Case 0
+                MainForm.KarmaBar.ForeColor = Color.Maroon
+            Case 1
+                MainForm.KarmaBar.ForeColor = Color.DarkRed
+            Case 2
+                MainForm.KarmaBar.ForeColor = Color.Red
+            Case 3
+                MainForm.KarmaBar.ForeColor = Color.LightSalmon
+            Case 4
+                MainForm.KarmaBar.ForeColor = Color.Pink
+            Case 5
+                MainForm.KarmaBar.ForeColor = Color.White
+            Case 6
+                MainForm.KarmaBar.ForeColor = Color.Khaki
+            Case 7
+                MainForm.KarmaBar.ForeColor = Color.Yellow
+            Case 8
+                MainForm.KarmaBar.ForeColor = Color.YellowGreen
+            Case 9
+                MainForm.KarmaBar.ForeColor = Color.Chartreuse
+            Case 10
+                MainForm.KarmaBar.ForeColor = Color.Green
+        End Select
+
         ''Sets the picture to the correct picture for the karma level
         CheckBodyType()
     End Sub
@@ -283,7 +243,7 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub injurycheck()
         '' Checks the pet for injuries
-        If (injured = False) Then
+        If (Pet.Injured = False) Then
             HealthVar = MainForm.HealthBar.Value
             MainForm.HealthBar.Value = ((MainForm.HungerBar.Value + MainForm.ThirstBar.Value) / 2)
         Else
@@ -311,18 +271,8 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub CheckBodyType()
         '' Updates the picture based on the pet's body state
-        BodyTypeNumber = MainForm.KarmaBar.Value - 1
-        BodyType = "Body" & BodyTypeNumber
-        If (sleepboolean = True) Then
-            BodyState = "ASLEEP"
-        Else
-            BodyState = "AWAKE"
-        End If
-        If (BodyType = "Body-1") Then
-            MainForm.PetBodyDisplay.Image = Bitmap.FromFile(Application.StartupPath + "\Resources\Body_1" & BodyState & ".png")
-        Else
-            MainForm.PetBodyDisplay.Image = Bitmap.FromFile(Application.StartupPath + "\Resources\" & BodyType & BodyState & ".png")
-        End If
+        Dim filePath = String.Format("{0}\Resources\Body{1}{2}.png", Application.StartupPath, MainForm.KarmaBar.Value, If(Pet.Asleep, "ASLEEP", "AWAKE"))
+        MainForm.PetBodyDisplay.Image = Bitmap.FromFile(filePath)
     End Sub
     ''' <summary>
     ''' Starts a new game
@@ -330,11 +280,10 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub newgame()
         '' resets all values
-        Cash = 100
-        age = 0
-        PetName = "NAME"
-        MainForm.PetNameLabel.Text = PetName
-        BodyTypeNumber = 4
+        Settings.Cash = 100
+        Pet.Age = 0
+        Pet.Name = "NAME"
+        MainForm.PetNameLabel.Text = Pet.Name
         starttime = Now
         minutes = 0
         MainForm.KarmaBar.Value = 5
@@ -344,14 +293,14 @@ Module Module1
         MainForm.ToiletBar.Value = 0
         MainForm.EnergyBar.Value = 1000
         karmabuffer = 0
-        PauseBoolean = False
-        Food = 2
-        Drink = 2
-        Boost = 0
-        Bandage = 0
-        WorkLevel = 1
-        workbuffer = 0
-        injured = False
+        Paused = False
+        Settings.Food = 2
+        Settings.Drink = 2
+        Settings.Boost = 0
+        Settings.Bandage = 0
+        Pet.WorkLevel = 1
+        Pet.workbuffer = 0
+        Pet.Injured = False
         NameForm.Show()
         SettingsForm.SlowBtn.Checked = False
         SettingsForm.FastBtn.Checked = False
@@ -362,23 +311,20 @@ Module Module1
     ''' <summary>
     ''' Pauses the game
     ''' </summary>
-    ''' <param name="PauseBoolean"></param>
-    ''' <returns></returns>
     ''' <remarks></remarks>
-    Function pausegame(ByVal PauseBoolean As Boolean)
+    Sub pausegame()
         '' Pauses the game
-        If (PauseBoolean = True) Then
-            PauseForm.Show()
-            age = age
-            MainForm.Timer1.Stop()
-            MainForm.HealthBar.Value = MainForm.HealthBar.Value
-            MainForm.HungerBar.Value = MainForm.HungerBar.Value
-        Else
-            PauseForm.Hide()
+        If Settings.Paused Then
             MainForm.Timer1.Start()
+            Settings.Paused = False
+            MainForm.Button3.Text = "PAUSE"
+        Else
+            Settings.Paused = True
+            MainForm.Timer1.Stop()
+            MainForm.Button3.Text = "RESUME"
         End If
 
-    End Function
+    End Sub
     ''' <summary>
     ''' Runs subroutines as above
     ''' </summary>
@@ -411,7 +357,7 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub play()
         '' Plays with the cyberpet
-        Dim karmaAdd As Double = (Module1.randomclass.Next(1, 5)) / 10
+        Dim karmaAdd As Double = (Module1.random.Next(1, 5)) / 10
         If (MainForm.EnergyBar.Value > 199) Then
             Say("You play with your cyberpet")
             Say("You recieved " & karmaAdd & " karma")
@@ -429,7 +375,7 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub Say(Speech As String, Optional showMsg As Boolean = True)
         '   speaker.SelectVoice("Microsoft Anna")
-        speaker.SpeakAsync(Speech)
+        Speaker.SpeakAsync(Speech)
         If (showMsg) Then MsgBox(Speech)
     End Sub
 End Module

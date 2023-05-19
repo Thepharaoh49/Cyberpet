@@ -22,7 +22,187 @@ WindowsApplication20
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="M:CyberPet.Module1.punish">
+<member name="P:CyberPet.My.Resources.Resources.Body0">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body0ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body0AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body10">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body10ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body10AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body1ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body1AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body2ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body2AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body3">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body3ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body3AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body4">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body4ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body4AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body5">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body5ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body5AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body6">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body6ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body6AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body7">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body7ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body7AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body8">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body8ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body8AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body9">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body9ASLEEP">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.Body9AWAKE">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.DefaultMouth">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.EvilMouth">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CyberPet.My.Resources.Resources.GoodMouth">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:CyberPet.Cyberpet.Punish">
  <summary>
  Punishes the pet, causing injury.
  </summary>
@@ -34,31 +214,31 @@ WindowsApplication20
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.feed">
+<member name="M:CyberPet.Module1.Feed">
  <summary>
  Gives the cyberpet food
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.givedrink">
+<member name="M:CyberPet.Module1.UseDrink">
  <summary>
  gives the cyberpet drink
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.giveboost">
+<member name="M:CyberPet.Module1.UseBoost">
  <summary>
  Gives the cyberpet an energy boost
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.givebandage">
+<member name="M:CyberPet.Module1.UseBandage">
  <summary>
  Gives the pet a bandage, healing injury
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.annoy">
+<member name="M:CyberPet.Module1.Annoy">
  <summary>
  Produces a random speech-synthesised string from a selection
  </summary>
@@ -124,12 +304,10 @@ WindowsApplication20
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.pausegame(System.Boolean)">
+<member name="M:CyberPet.Module1.pausegame">
  <summary>
  Pauses the game
  </summary>
- <param name="PauseBoolean"></param>
- <returns></returns>
  <remarks></remarks>
 </member>
 <member name="M:CyberPet.Module1.checkbars">
@@ -150,7 +328,7 @@ WindowsApplication20
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.Say(System.String)">
+<member name="M:CyberPet.Module1.Say(System.String,System.Boolean)">
  <summary>
  Allows speech synthesis
  </summary>
