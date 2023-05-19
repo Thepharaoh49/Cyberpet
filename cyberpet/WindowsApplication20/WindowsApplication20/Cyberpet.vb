@@ -5,6 +5,8 @@
     Private _Energy As Integer = 1000
     Private _Karma As Integer = 5
     Private _Experience As Integer = 0
+    Private _Health As Integer = 1000
+    Private _KarmaExp As Integer = 0
     Public Property BodyState As String
     Public Property Level As Byte = 1
     Public Property Injured As Boolean
@@ -13,6 +15,22 @@
     Public Property Age As Integer = 0
     Public Property Dead As Boolean
     Public Property WorkLevel As Byte = 1
+    Public Property KarmaExp As Integer
+        Get
+            Return _KarmaExp
+        End Get
+        Set
+            _KarmaExp = Value
+            If (_KarmaExp < -0.9) Then
+                Karma -= 1
+                _KarmaExp = 0
+            ElseIf _KarmaExp > 0.9 Then
+                Karma += 1
+                _KarmaExp = 0
+            End If
+        End Set
+    End Property
+
     Public Property workbuffer As Double = 0
     Public Property Experience As Integer
         Get
@@ -56,6 +74,9 @@
         End Get
         Set
             _Toilet = Math.Max(0, Math.Min(1000, Value))
+            If (_Toilet = 1000) Then
+                MissedToilet()
+            End If
         End Set
     End Property
     Public Property Energy As Integer
@@ -64,6 +85,14 @@
         End Get
         Set
             _Energy = Math.Max(0, Math.Min(1000, Value))
+        End Set
+    End Property
+    Public Property Health As Integer
+        Get
+            Return _Health
+        End Get
+        Set
+            _Health = Value
         End Set
     End Property
 
@@ -84,6 +113,70 @@
             newgame()
         End If
     End Sub
+
+    ''' <summary>
+    ''' Handles max toilet value overflow
+    ''' </summary>
+    Private Sub MissedToilet()
+        If (Injured = False) Then
+            Say("Your pet's bladder exploded. Your pet has become injured.")
+            Injured = True
+        Else
+            Say("You pet needed the toilet. Your pet has died.")
+            newgame()
+        End If
+    End Sub
+
     Private Sub LevelUp()
+        Say("Level! Up!")
+        Pet.Level += 1
+    End Sub
+
+    ''' <summary>
+    ''' "plays" with the cyberpet, increasing karma and decreasing energy
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub play()
+        '' Plays with the cyberpet
+        Dim karmaAdd As Double = (Module1.random.Next(1, 5)) / 10
+        If (Energy >= 200) Then
+            Say("You play with your cyberpet")
+            Say("You recieved " & karmaAdd & " karma")
+            Say("Your pet used up twenty percent energy")
+            KarmaExp += karmaAdd
+            Energy -= 200
+        Else
+            Say("You do not have enough energy")
+        End If
+    End Sub
+    Public Sub OnTick()
+        If (Asleep = True) Then
+            Energy += 1
+        End If
+        Hunger -= 1
+        Thirst -= 1
+        Toilet += Math.Max(1, Math.Min(10, Age))
+
+        CalculateHealth()
+    End Sub
+    ''' <summary>
+    ''' Sets health value based on injury
+    ''' </summary>
+    Public Sub CalculateHealth()
+        '' Checks the pet for injuries
+        If (Injured) Then
+            Health = (Hunger + Thirst) / 3
+        Else
+            Health = (Hunger + Thirst) / 2
+        End If
+
+        '' Checks if the pet has died or not
+        If (Pet.Health < 1) Then
+            Pet.Thirst = 1000
+            Pet.Hunger = 1000
+            Pet.Health = 1000
+            Say("Your pet has died")
+            newgame()
+        End If
     End Sub
 End Class

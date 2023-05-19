@@ -45,19 +45,9 @@ Module Module1
         ''increases hungerbar and removes a food.
         If (Settings.Food > 0) Then
             Settings.Food -= 1
-            If (MainForm.HungerBar.Value < 801) Then
-                MainForm.HungerBar.Value += 200
-            Else
-                MainForm.HungerBar.Value = 1000
-            End If
-            If (MainForm.EnergyBar.Value < 901) Then
-                MainForm.EnergyBar.Value += 100
-            Else
-                MainForm.EnergyBar.Value = 1000
-            End If
+            Pet.Hunger += 200
         Else
             Say("You do not have any cyber food")
-
         End If
 
     End Sub
@@ -69,16 +59,7 @@ Module Module1
         '' Increases thirstbar and removes a drink
         If (Settings.Drink > 0) Then
             Settings.Drink -= 1
-            If (MainForm.ThirstBar.Value < 801) Then
-                MainForm.ThirstBar.Value += 200
-            Else
-                MainForm.ThirstBar.Value = 1000
-            End If
-            If (MainForm.ToiletBar.Value < 801) Then
-                MainForm.ToiletBar.Value += 200
-            Else
-                MainForm.ToiletBar.Value = 1000
-            End If
+            Pet.Thirst += 200
         End If
     End Sub
     ''' <summary>
@@ -89,11 +70,7 @@ Module Module1
         '' increases energybar and removes a boost
         If (Settings.Boost > 0) Then
             Settings.Boost -= 1
-            If (MainForm.EnergyBar.Value < 801) Then
-                MainForm.EnergyBar.Value += 200
-            Else
-                MainForm.EnergyBar.Value = 1000
-            End If
+            Pet.Energy += 200
         End If
     End Sub
     ''' <summary>
@@ -102,7 +79,7 @@ Module Module1
     ''' <remarks></remarks>
     Public Sub UseBandage()
         '' removes injury and bandage
-        If (Pet.Injured = True) Then
+        If (Pet.Injured) Then
             If (Settings.Bandage > 0) Then
                 Settings.Bandage -= 1
                 Pet.Injured = False
@@ -131,65 +108,6 @@ Module Module1
             Say("You are annoying me", False)
         ElseIf (speechcheck = 4) Then
             Say("ow", False)
-        End If
-    End Sub
-    ''' <summary>
-    ''' Checks for a level up
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub experiencecheck()
-        ''Checks for level up in experience
-        If (MainForm.ExperienceBar.Value = MainForm.ExperienceBar.Maximum) Then
-            MainForm.ExperienceBar.Value = 0
-            Say("Level! Up!")
-            Pet.Level += 1
-        End If
-    End Sub
-    ''' <summary>
-    ''' Checks the need for toilet
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub ToiletCheck()
-        ''Checks for actions needed based on toiletbar value
-        If (MainForm.ToiletBar.Value > 999) Then
-            MainForm.ToiletBar.Value = 1
-            If (Pet.Injured = False) Then
-                Say("Your pet's bladder exploded. Your pet has become injured.")
-                Pet.Injured = True
-            Else
-                Say("You pet needed the toilet. Your pet has died.")
-                newgame()
-            End If
-        End If
-    End Sub
-    ''' <summary>
-    ''' Checks whether the pet is asleep and regaining energy
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub SleepCheck()
-        '' Increases energy when asleep
-        If (Pet.Asleep = True) Then
-            If (MainForm.EnergyBar.Value < 1000) Then
-                MainForm.EnergyBar.Value += 1
-            Else
-                MainForm.EnergyBar.Value = 1000
-            End If
-        End If
-    End Sub
-    ''' <summary>
-    ''' Adds one to the karma if the buffer is at 1
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub Karmaupdate()
-        '' updates the karma when needed
-        If (karmabuffer < -0.9) Then
-            MainForm.KarmaBar.Value += 1
-            karmabuffer = 0
-        End If
-
-        If (karmabuffer > 0.9) Then
-            MainForm.KarmaBar.Value += 1
-            karmabuffer = 0
         End If
     End Sub
     ''' <summary>
@@ -233,38 +151,10 @@ Module Module1
             Case 10
                 MainForm.KarmaBar.ForeColor = Color.Green
         End Select
-
         ''Sets the picture to the correct picture for the karma level
         CheckBodyType()
     End Sub
-    ''' <summary>
-    ''' Sets health value based on injury
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub injurycheck()
-        '' Checks the pet for injuries
-        If (Pet.Injured = False) Then
-            HealthVar = MainForm.HealthBar.Value
-            MainForm.HealthBar.Value = ((MainForm.HungerBar.Value + MainForm.ThirstBar.Value) / 2)
-        Else
-            MainForm.HealthBar.Value = ((MainForm.HungerBar.Value + MainForm.ThirstBar.Value) / 3)
-        End If
-    End Sub
-    ''' <summary>
-    ''' Checks whether the health has hit 0 or not
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub HealthCheck()
-        '' Checks if the pet has died or not
-        If (MainForm.HealthBar.Value < 1) Then
-            MainForm.ThirstBar.Value = 1000
-            MainForm.HungerBar.Value = 1000
-            MainForm.HealthBar.Value = 1000
-            Say("Your pet has died")
-            newgame()
 
-        End If
-    End Sub
     ''' <summary>
     ''' Updates the colour of the pet, and whether it is awake or not
     ''' </summary>
@@ -286,14 +176,14 @@ Module Module1
         MainForm.PetNameLabel.Text = Pet.Name
         starttime = Now
         minutes = 0
-        MainForm.KarmaBar.Value = 5
-        MainForm.HealthBar.Value = 1000
-        MainForm.HungerBar.Value = 1000
-        MainForm.ThirstBar.Value = 1000
-        MainForm.ToiletBar.Value = 0
-        MainForm.EnergyBar.Value = 1000
-        karmabuffer = 0
-        Paused = False
+        Pet.Karma = 5
+        Pet.Health = 1000
+        Pet.Hunger = 1000
+        Pet.Thirst = 1000
+        Pet.Toilet = 0
+        Pet.Energy = 1000
+        Pet.KarmaExp = 0
+        Settings.Paused = False
         Settings.Food = 2
         Settings.Drink = 2
         Settings.Boost = 0
@@ -308,33 +198,14 @@ Module Module1
         MainForm.Timer1.Interval = 100
         SettingsForm.NormalBtn.Checked = True
     End Sub
-    ''' <summary>
-    ''' Pauses the game
-    ''' </summary>
-    ''' <remarks></remarks>
-    Sub pausegame()
-        '' Pauses the game
-        If Settings.Paused Then
-            MainForm.Timer1.Start()
-            Settings.Paused = False
-            MainForm.Button3.Text = "PAUSE"
-        Else
-            Settings.Paused = True
-            MainForm.Timer1.Stop()
-            MainForm.Button3.Text = "RESUME"
-        End If
 
-    End Sub
     ''' <summary>
     ''' Runs subroutines as above
     ''' </summary>
     ''' <remarks></remarks>
     Public Sub checkbars()
         '' Runs several subroutines
-        ToiletCheck()
-        SleepCheck()
         karmacheck()
-        HealthCheck()
     End Sub
     ''' <summary>
     ''' Sets the background of the settings form
@@ -351,23 +222,7 @@ Module Module1
             SettingsForm.BackColor = Color.LightPink
         End If
     End Sub
-    ''' <summary>
-    ''' "plays" with the cyberpet, increasing karma and decreasing energy
-    ''' </summary>
-    ''' <remarks></remarks>
-    Public Sub play()
-        '' Plays with the cyberpet
-        Dim karmaAdd As Double = (Module1.random.Next(1, 5)) / 10
-        If (MainForm.EnergyBar.Value > 199) Then
-            Say("You play with your cyberpet")
-            Say("You recieved " & karmaAdd & " karma")
-            Say("Your pet used up twenty percent energy")
-            karmabuffer += karmaAdd
-            MainForm.EnergyBar.Value -= 200
-        Else
-            Say("You do not have enough energy")
-        End If
-    End Sub
+
     ''' <summary>
     ''' Allows speech synthesis
     ''' </summary>

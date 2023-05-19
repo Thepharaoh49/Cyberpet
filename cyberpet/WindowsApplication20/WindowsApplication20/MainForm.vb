@@ -7,36 +7,16 @@ Public Class MainForm
         newgame()
     End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        '' Checks for new level
-        experiencecheck()
         '' Changes cash labels to suit any new changes in cash
         updatecash()
         '' update of progressbars and verticalprogressbars
-        If (HungerBar.Value > 0) Then
-            HungerBar.Value -= 1
-        End If
-        If (ThirstBar.Value > 0) Then
-            ThirstBar.Value -= 1
-        End If
-        If (ToiletBar.Value < 1000) Then
-            If (Pet.Age > 0) Then
-                If (Pet.Age < 11) Then
-                    ToiletBar.Value += Pet.Age
-                Else
-                    ToiletBar.Value += 10
-                End If
-            Else
-                ToiletBar.Value += 1
-            End If
-        End If
+
+        Pet.OnTick()
+
         '' Checks if actions are needed based on progressbar values
         checkbars()
-        '' Pauses game if needed
-        If (Paused = True) Then
-            Threading.Thread.Sleep(0)
-        End If
+
         '' Changes time label to display time
-        stoptime = Now
         TimeText = (DateDiff("s", starttime, stoptime))
         TimeLabel.Text = Convert.ToString(minutes) & " : " & TimeText
         If (TimeText > 59) Then
@@ -48,14 +28,10 @@ Public Class MainForm
         End If
         '' Updates age
         AgeLabel.Text = "Age: " & Pet.Age
-        ''Checks to see if the pets karma has changed
-        Karmaupdate()
-        '' checks to see if there is an injury
-        injurycheck()
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         '' Pauses the game when PAUSE is clicked
-        pausegame()
+        Pause()
     End Sub
     Private Sub PetBodyDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PetBodyDisplay.Click
         '' Plays a sound when the pet is clicked, randomly selected from a set of phrases
@@ -75,109 +51,75 @@ Public Class MainForm
     End Sub
     Private Sub PLAYToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PLAYToolStripMenuItem1.Click
         '' plays with the pet
-        play()
+        Pet.play()
+    End Sub
+    Private Sub FightEnemy(enemyLevel As String)
+        Dim SuccessChance As Integer
+        Dim KarmaChange As Integer
+        Dim MoneyChange As Integer
+        Dim ExpChange As Integer
+        Dim mult = 0
+        Dim EnergyGain = 5
+        Dim EnergyLose = 15
+        Select Case (enemyLevel)
+            Case "Medium"
+                mult = 1
+                EnergyGain = 10
+                EnergyLose = 25
+            Case "Strong"
+                mult = 2
+                EnergyGain = 30
+                EnergyLose = 50
+        End Select
+
+        SuccessChance = Module1.random.Next(50 * mult, 50 * (mult + 1)) * (Math.Sqrt(Pet.Level))
+        MoneyChange = Module1.random.Next((50 * mult) + 1, 50 * (mult + 1))
+        KarmaChange = Module1.random.Next(0.1, 0.5)
+        ExpChange = ExperienceBar.Maximum / (4 - mult)
+
+        If (Pet.Injured) Then
+            Say("Your pet is injured and cannot fight.")
+            Return
+        End If
+        If Not (Pet.Energy > 49 And Pet.Health > 0) Then
+            Say("Your pet is not fit enough to fight.")
+            Return
+        End If
+
+        Say($"You fight a {enemyLevel} enemy")
+
+        If SuccessChance > (4 + (10 * mult)) Then
+            Say("You win the fight")
+            Say($"You recieved: {MoneyChange} Cybercash and {ExpChange} experience points")
+            Say($"You used up {EnergyGain} percent energy")
+            Settings.Cash += MoneyChange
+            Pet.Energy -= EnergyGain * 10
+            MoneyEarned += MoneyChange
+            Pet.KarmaExp -= KarmaChange
+            Pet.Experience += ExpChange
+        Else
+            Say("You lose the fight.")
+            Say($"You lost: {MoneyChange} CyberCash and became injured.")
+            Say($"You used up {EnergyLose} percent energy")
+            If (Settings.Cash - MoneyChange > -1) Then
+                Settings.Cash -= MoneyChange
+                MoneyLost += MoneyChange
+            Else
+                Settings.Cash = 0
+            End If
+            Pet.Energy -= EnergyLose * 10
+            Pet.Injured = True
+        End If
+
     End Sub
     Private Sub WEAKToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WEAKToolStripMenuItem1.Click
-        '' fights a weak enemy
-        '' calculates chance of winning
-        Dim fightchanceweak As Integer = (Module1.random.Next(0, 50 * (Math.Sqrt(Pet.Level))))
-        '' calculates karma to add
-        Dim fightkarmaadd As Integer = (Module1.random.Next(0.1, 0.5))
-        '' calculates money that is gambled
-        Dim fightmoneyadd As Integer = (Module1.random.Next(1, 50))
-        '' calculates experience to add
-        Dim experienceadd As Integer = (ExperienceBar.Maximum) / 4
-        '' checks that you are capable of fighting
-        If (Pet.Injured = False) Then
-            If (EnergyBar.Value > 49) Then
-                If (HealthBar.Value > 0) Then
-                    Say("You fight a weak enemy")
-                    ''checks if you win
-                    If (fightchanceweak > 4) Then
-                        '' Tells the user the fight details
-                        Say("you win the fight")
-                        Say("You recieved: " & fightmoneyadd & " Cybercash and " & experienceadd & "experience points")
-                        Say("You used up five percent energy")
-                        '' updates values
-                        Settings.Cash += fightmoneyadd
-                        EnergyBar.Value -= 50
-                        MoneyEarned += fightmoneyadd
-                        karmabuffer -= fightkarmaadd
-                        If (experienceadd < ((ExperienceBar.Maximum - ExperienceBar.Value))) Then
-                            ExperienceBar.Value = ExperienceBar.Value + experienceadd
-                        Else
-                            ExperienceBar.Value = ExperienceBar.Maximum
-                            experiencecheck()
-                        End If
-
-                    Else
-                        Say("You lose the fight.")
-                        Say("You lost: " & fightmoneyadd & "CyberCash and became injured.")
-                        Say("You used up fifteen percent energy")
-                        If (Settings.Cash - fightmoneyadd > -1) Then
-                            Settings.Cash -= fightmoneyadd
-                            MoneyLost += fightmoneyadd
-                        Else
-                            Settings.Cash = 0
-                        End If
-                        EnergyBar.Value -= 150
-                        Pet.Injured = True
-                    End If
-                End If
-            End If
-        Else
-            Say("Your pet is injured and cannot fight.")
-        End If
+        FightEnemy("Weak")
     End Sub
     Private Sub MEDIUMToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MEDIUMToolStripMenuItem1.Click
-        '' fights a medium enemy
-        '' calculates chance of winning the fight
-        Dim fightchancemedium As Integer = (Module1.random.Next(0, 25 * (Math.Sqrt(Pet.Level))))
-        '' calculates the amount of money gambled
-        Dim fightmoneyaddmedium As Integer = (Module1.random.Next(51, 100))
-        '' calculates amount of karma earned/lost
-        Dim fightkarmaadd As Integer = (Module1.random.Next(0.1, 0.5))
-        '' calculates potential addition to experience
-        Dim experienceadd As Integer = (ExperienceBar.Maximum) / 3
-        '' checks that you are capable of fighting
-        If (Pet.Injured = False) Then
-            If (EnergyBar.Value > 249) Then
-                If (HealthBar.Value > 0) Then
-                    Say("You fight a medium strength enemy.")
-                    '' checks if you win
-                    If (fightchancemedium > 14) Then
-                        Say("You win the fight.")
-                        Say("You recieved: " & fightmoneyaddmedium & " Cybercash, and " & experienceadd & "experience points")
-                        Say("You used up ten percent energy")
-                        '' updates variables
-                        Settings.Cash += fightmoneyaddmedium
-                        EnergyBar.Value -= 100
-                        MoneyEarned += fightmoneyaddmedium
-                        If (experienceadd < ((ExperienceBar.Maximum - ExperienceBar.Value))) Then
-                            ExperienceBar.Value += experienceadd
-                        Else
-                            ExperienceBar.Value = ExperienceBar.Maximum
-                        End If
-                        karmabuffer -= fightkarmaadd
-                    Else
-                        Say("You lose the fight.")
-                        Say("You lost: " & fightmoneyaddmedium & "CyberCash and became injured.")
-                        Say("You used up twenty five percent energy")
-                        Settings.Cash -= fightmoneyaddmedium
-                        If (Settings.Cash - fightmoneyaddmedium > -1) Then
-                            Settings.Cash -= fightmoneyaddmedium
-                            MoneyLost += fightmoneyaddmedium
-                        Else
-                            Settings.Cash = 0
-                        End If
-                        EnergyBar.Value -= 250
-                        Pet.Injured = True
-                    End If
-                End If
-            End If
-        Else
-            Say("Your pet is injured and cannot fight.")
-        End If
+        FightEnemy("Medium")
+    End Sub
+    Private Sub STRONGToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles STRONGToolStripMenuItem1.Click
+        FightEnemy("Strong")
     End Sub
     Private Sub SAVEToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SAVEToolStripMenuItem1.Click
         ''Saves the game
@@ -200,23 +142,23 @@ Public Class MainForm
             '' Saves the given variables to the text file
             save.WriteLine(Pet.Name)
             save.WriteLine(Pet.Age)
-            save.WriteLine(KarmaBar.Value)
-            save.WriteLine(HealthBar.Value)
-            save.WriteLine(HungerBar.Value)
-            save.WriteLine(ThirstBar.Value)
-            save.WriteLine(EnergyBar.Value)
-            save.WriteLine(ToiletBar.Value)
+            save.WriteLine(Pet.Karma)
+            save.WriteLine(Pet.Health)
+            save.WriteLine(Pet.Hunger)
+            save.WriteLine(Pet.Thirst)
+            save.WriteLine(Pet.Energy)
+            save.WriteLine(Pet.Toilet)
             save.WriteLine(Settings.Cash)
             save.WriteLine(Pet.Injured)
             save.WriteLine(Settings.Food)
             save.WriteLine(Settings.Drink)
             save.WriteLine(Settings.Boost)
             save.WriteLine(Settings.Bandage)
-            save.WriteLine(karmabuffer)
+            save.WriteLine(Pet.KarmaExp)
             save.WriteLine(Pet.WorkLevel)
             save.WriteLine(Pet.workbuffer)
             save.WriteLine(Pet.Level)
-            save.WriteLine(ExperienceBar.Value)
+            save.WriteLine(Pet.Experience)
             save.WriteLine(emergencycounter)
             save.WriteLine(MoneyEarned)
             save.WriteLine(MoneyLost)
@@ -258,10 +200,10 @@ Public Class MainForm
             Pet.Age = load.ReadLine()
             KarmaBar.Value = load.ReadLine()
             HealthBar.Value = load.ReadLine()
-            HungerBar.Value = load.ReadLine()
-            ThirstBar.Value = load.ReadLine()
+            Pet.Hunger = load.ReadLine()
+            Pet.Thirst = load.ReadLine()
             EnergyBar.Value = load.ReadLine()
-            ToiletBar.Value = load.ReadLine()
+            Pet.Toilet = load.ReadLine()
             Settings.Cash = load.ReadLine()
             Pet.Injured = load.ReadLine()
             Settings.Food = load.ReadLine()
@@ -307,7 +249,7 @@ Public Class MainForm
     End Sub
     Private Sub TOILETToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TOILETToolStripMenuItem.Click
         '' Sends the pet to the toilet
-        ToiletBar.Value = 0
+        Pet.Toilet = 0
     End Sub
     Private Sub SLEEPToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SLEEPToolStripMenuItem.Click
         '' Toggles between awake and asleep
@@ -325,13 +267,13 @@ Public Class MainForm
         ''Sends pet to work to earn money
         '' Calculates money to add
         Dim moneyAdd As Integer = (Module1.random.Next((Pet.WorkLevel * 5), ((Pet.WorkLevel * 5) * Pet.WorkLevel)))
-        If (EnergyBar.Value > 99) Then
+        If (Pet.Energy > 99) Then
             Say("Your pet goes to work.")
             Say("You recieved: " & moneyAdd & " CyberCash")
             Say("You used up ten percent energy")
             '' Updates values
             Settings.Cash += moneyAdd
-            EnergyBar.Value = EnergyBar.Value - 100
+            Pet.Energy -= 100
             If (Pet.WorkLevel < 100) Then
                 Pet.workbuffer += 0.5
             End If
@@ -351,66 +293,17 @@ Public Class MainForm
             Settings.Cash = 25
             emergencycounter += 1
         ElseIf emergencycounter = 8 Then
-            KarmaBar.Value = 0
-            karmabuffer = 0
+            Pet.Karma = 0
+            Pet.KarmaExp = 0
         Else
             Say("You have exceeded the amount of emergency cash withdrawals.")
             emergencycounter += 1
         End If
     End Sub
-    Private Sub STRONGToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles STRONGToolStripMenuItem1.Click
-        '' Fights a strong enemy
-        '' calculates win chance
-        Dim fightchancestrong As Integer = (Module1.random.Next(0, (100 * (Math.Sqrt(Pet.Level)))))
-        '' calculates money to add/take
-        Dim fightmoneyaddstrong As Integer = (Module1.random.Next(101, 200))
-        '' calculates karma change
-        Dim fightkarmaadd As Integer = (Module1.random.Next(0.1, 0.5))
-        ''calculates experience to potentially add
-        Dim experienceadd As Integer = (ExperienceBar.Maximum) / 2
-        '' checks that the pet is capable of fighting
-        If (Pet.Injured = False) Then
-            If (EnergyBar.Value > 249) Then
-                If (HealthBar.Value > 0) Then
-                    Say("You fight a strong enemy.")
-                    '' Checks if the pet wins
-                    If (fightchancestrong > 49) Then
-                        Say("You win the fight.")
-                        Say("You recieved: " & fightmoneyaddstrong & " Cybercash, and " & experienceadd & "experience points")
-                        Say("You used up thirty percent energy")
-                        ''Updates values
-                        Settings.Cash += fightmoneyaddstrong
-                        EnergyBar.Value = EnergyBar.Value - 100
-                        MoneyEarned += fightmoneyaddstrong
-                        If (experienceadd < ((ExperienceBar.Maximum - ExperienceBar.Value))) Then
-                            ExperienceBar.Value = ExperienceBar.Value + experienceadd
-                        Else
-                            ExperienceBar.Value = ExperienceBar.Maximum
-                        End If
-                        karmabuffer -= fightkarmaadd
-                    Else
-                        Say("You lose the fight.")
-                        Say("You lost: " & fightmoneyaddstrong & "CyberCash and became injured.")
-                        Say("You used up fifty percent energy")
-                        Settings.Cash -= fightmoneyaddstrong
-                        If (Settings.Cash - fightmoneyaddstrong > -1) Then
-                            Settings.Cash -= fightmoneyaddstrong
-                            MoneyLost += fightmoneyaddstrong
-                        Else
-                            Settings.Cash = 0
-                        End If
-                        EnergyBar.Value = EnergyBar.Value - 250
-                        Pet.Injured = True
-                    End If
-                End If
-            End If
-        Else
-            Say("Your pet is injured and cannot fight.")
-        End If
-    End Sub
+
     Private Sub ToolStripMenuItem13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem13.Click
         '' Brings up the About form
-        pausegame()
+        Pause()
         AboutForm.Show()
     End Sub
     Private Sub PUNISHToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PUNISHToolStripMenuItem.Click

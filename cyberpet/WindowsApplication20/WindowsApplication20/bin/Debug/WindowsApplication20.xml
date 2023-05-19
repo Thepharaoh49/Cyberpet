@@ -244,12 +244,6 @@ WindowsApplication20
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:CyberPet.Module1.experiencecheck">
- <summary>
- Checks for a level up
- </summary>
- <remarks></remarks>
-</member>
 <member name="M:CyberPet.Module1.ToiletCheck">
  <summary>
  Checks the need for toilet

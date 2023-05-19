@@ -5,18 +5,18 @@
         ''Updates the name label
         MainForm.PetNameLabel.Text = Pet.Name
         Close()
-        pausegame()
+        Pause()
 
     End Sub
     Private Sub RenameCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RenameCancel.Click
         Close()
-        pausegame()
+        Pause()
     End Sub
     Private Sub NameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        pausegame()
+        Pause()
 
     End Sub
     Private Sub NameForm_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
-        pausegame()
+        Pause()
     End Sub
 End Class

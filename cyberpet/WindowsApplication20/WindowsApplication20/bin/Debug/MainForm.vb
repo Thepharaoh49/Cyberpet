@@ -7,13 +7,11 @@ Public Class MainForm
         newgame()
     End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        '' Checks for new level
-        experiencecheck()
         '' Changes cash labels to suit any new changes in cash
         updatecash()
         '' update of progressbars and verticalprogressbars
-        If (HungerBar.Value > 0) Then
-            HungerBar.Value -= 1
+        If (Pet.Hunger > 0) Then
+            Pet.Hunger -= 1
         End If
         If (ThirstBar.Value > 0) Then
             ThirstBar.Value -= 1
@@ -107,7 +105,6 @@ Public Class MainForm
                             ExperienceBar.Value = ExperienceBar.Value + experienceadd
                         Else
                             ExperienceBar.Value = ExperienceBar.Maximum
-                            experiencecheck()
                         End If
 
                     Else
@@ -202,7 +199,7 @@ Public Class MainForm
             save.WriteLine(Pet.Age)
             save.WriteLine(KarmaBar.Value)
             save.WriteLine(HealthBar.Value)
-            save.WriteLine(HungerBar.Value)
+            save.WriteLine(Pet.Hunger)
             save.WriteLine(ThirstBar.Value)
             save.WriteLine(EnergyBar.Value)
             save.WriteLine(ToiletBar.Value)
@@ -258,7 +255,7 @@ Public Class MainForm
             Pet.Age = load.ReadLine()
             KarmaBar.Value = load.ReadLine()
             HealthBar.Value = load.ReadLine()
-            HungerBar.Value = load.ReadLine()
+            Pet.Hunger = load.ReadLine()
             ThirstBar.Value = load.ReadLine()
             EnergyBar.Value = load.ReadLine()
             ToiletBar.Value = load.ReadLine()
